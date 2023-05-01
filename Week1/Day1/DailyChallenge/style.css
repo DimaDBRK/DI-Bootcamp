@@ -1,0 +1,235 @@
+/* 
+Font size of the title
+on Medium devices (landscape tablets, 768px and up) : 25px
+on Small devices (portrait tablets and large phones, 600px and up): 35px
+Navbar background color
+Small devices : yellow and font color black
+Medium devices : lightgreen and font color black.
+Large devices (laptops/desktops, 992px and up) : red and font color white.
+Extra large devices (large laptops and desktops, 1200px and up) : black and font color white.
+Position of the text
+Large devices: the title is next to the paragraph.
+Small devices: the title is above the paragraph.
+ */
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Roboto", "Arial", sans-serif;
+  }
+  
+  /* Nav bar */
+  header {
+    background-color: #000000;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: 320px) {
+  header {
+      background-color: yellow;
+      color: black;
+    }
+  }
+  
+  @media (min-width: 600px) {
+  header {
+      background-color: lightgreen;
+      color: black;
+    }
+  }
+  
+  @media (min-width: 768px) {
+  header {
+      background-color: red;
+      color: white;
+    }
+  }
+  
+  @media (min-width: 992px) {
+  header {
+      background-color: black;
+      color: white;
+    }
+  }
+  
+
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #333; */
+  }
+
+  li {
+    float: right;
+  }
+  
+  nav a {
+    float: left;
+  }
+
+  li a, nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  
+  .logo-letter {
+    font-weight: bold;
+}
+
+.section-1 {
+    background-image: url("image1.jpg"); /* The image used */
+    overflow: hidden;
+    background-color: #f7f7fa; /* Used if the image is unavailable */
+   
+    /* background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 35px;
+  }
+}
+
+.box-text p {
+  width: 30%;
+  font-size: 1.5rem;
+}
+
+.box-text {
+  margin-top:24vh;
+  margin-left: 10vh;
+  margin-bottom: 10vh;
+}
+
+@media (min-width: 768px) {
+  
+  h1 {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+  }
+
+  h1 + p {
+    display: inline-block;
+    width: 50%;
+    margin-left: auto;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(11, 11, 11);
+  color: white;
+  text-align: center;
+}
+
+footer > p {
+  display: inline-block;
+  margin:0 10px;
+} 
+  /* .main-header {
+    position: sticky;
+    top: 0;
+    background-color: black;
+  }
+  
+
+  .navbar {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .link-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  
+  .link-list li {
+    display: inline-block;
+  }
+  
+  .site-link {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+  }
+  
+  .logo-letter-last {
+    position: relative;
+    right: 10px;
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+  
+  .logo {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .hero-section {
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 30px;
+    padding-top: 205px;
+    background-image: url("image1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  }
+  
+  .box-text {
+    width: 85%;
+    height: auto;
+  }
+  
+  h1 {
+    margin: 55px 0;
+    margin-bottom: 35px;
+    font-size: 6rem;
+    color: black;
+  }
+  
+      
+  h1 + p {
+    margin: 0;
+    color: black;
+    width: 60%;
+  }
+  
+  */

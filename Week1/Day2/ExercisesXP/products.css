@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Temp */
+div {
+    border: 1px solid red;
+}
+
+p {
+    border: 1px solid rgb(68, 61, 178);
+}
+
+h1 {
+    text-align: center;
+    
+}
+/* Main card-box */
+.main-cards-box {
+    text-align: center;
+    
+    
+}
+
+/* Card-box */
+.card-box {
+    display: inline-block;
+    width: 250px;
+    height: auto;
+    margin: 10px 10px;
+}
+
+.card-box:hover {
+    box-shadow: 10px 10px 5px lightgrey;
+    
+}
+
+
+/* Card-box Products img */
+.product1 {
+    background-image: url("product_1.jpg"); /* The image used */
+    
+   
+}
+
+.product2 {
+    background-image: url("product_2.jpg"); /* The image used */
+    
+}
+
+.product3 {
+    background-image: url("product_3.jpg"); /* The image used */
+    
+}
+
+.product4 {
+    background-image: url("product_4.jpg"); /* The image used */
+    
+}
+/* Card-box top */
+.card-top {
+    overflow: hidden;
+    background-color: #f7f7fa; /* Used if the image is unavailable */
+   
+    /* background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 300px;
+    border-radius: 5px;
+}
+
+
+
+.card-top-text-left {
+    float: left;
+    background-color: rgb(64, 223, 93);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* padding: 10px 0; */
+    color:white;
+    font-weight: bold;
+    font-size: 1em; 
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative; 
+
+    
+    
+}
+
+.card-top-text-right {
+    float: right;
+    background-color: rgb(220, 46, 52);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* padding: 10px 0; */
+    color:white;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: relative;
+    
+}
+
+.card-top-text-right p, .card-top-text-left p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* Card-box top */
+.card-bottom {
+    
+}
+
+h3 {
+    color:rgb(0, 0, 0);
+    /* font-weight: bold; */
+    font-size: 1em;
+    margin: 10px 0px; 
+}
+
+.card-bottom-price-new {
+    color:rgb(35, 120, 52);
+    font-weight: bold;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.card-bottom-price-old {
+    color:rgb(142, 139, 143);
+    font-weight: bold;
+    text-decoration: line-through;
+    font-size: 0.9em;
+    display: inline-block;
+    
+}
+
+/*  Prcie box */
+.price-box{
+    margin: 10px 0px;
+}
+
+
+/*  Button */
+
+button {
+    background-color: white;
+    color: grey;
+    border-radius: 3px;
+    padding: 10px 10px;
+    border: 1px solid gray;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-top:10px;
+}
+
+.no-top-text {
+    visibility: hidden;
+}
+
+  /* Footer -------------- */
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(11, 11, 11);
+    color: white;
+    text-align: center;
+ }
+
+ footer > p {
+    display: inline-block;
+    margin:0 10px;
+ } 
