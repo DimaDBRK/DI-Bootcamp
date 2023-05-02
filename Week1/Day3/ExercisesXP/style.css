@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Temp styles */
+div {
+    border: 1px solid red;
+}
+
+/* End of Temp styles */
+
+/* Main box */
+.box-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    gap:5px;
+}
+
+/* Small box */
+.box-content-small {
+    width: 30%;
+    padding: 30px 15px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(243, 239, 239);
+}
+
+
+
+
+/* Photo */
+
+/* .foto {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+} */
+
+.foto img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+/* .foto::before {
+    content:url(Dubrov.jpg);
+    max-width: 100%;
+    max-height: 100%;
+ }​ */
+.name {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    color: grey;
+}
+
+.contacts {
+    text-align: center;
+}
+ /* Links */
+.links a {
+    font-size: 2rem;
+    color: gray;
+}
+
+/* Big box */
+.box-main-content-big {
+    width: 70%;
+    padding: 15px;
+    background-color: rgb(250, 235, 235);
+}
+
+/* Content box big section */
+.box-content-big-section {
+padding: 10px;
+}
+
+.work {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-self: start;
+}
+
+li {
+    margin-left: 2rem;
+}
+
+.box-content-big-small-section>:first-child  {
+    font-weight: bold;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .box-main {
+        flex-direction: column;
+    }
+
+    .box-main-content-big, .box-content-small {
+        width: 100%;
+    }
+    
+    .foto img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+}

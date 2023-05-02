@@ -1,0 +1,81 @@
+.box-main {
+    display: grid;
+    grid-template-columns: repeat(3, 50px [col-start]);
+    grid-template-rows: repeat(3, 50px [col-start]);
+    grid-gap: 5px
+}
+
+.boxes {
+    /* margin: 2px; */
+}
+
+.boxes:nth-child(1), .boxes:nth-child(6), .boxes:nth-child(8)   {
+    background-color: rgb(255, 132, 0);
+}
+
+.boxes:nth-child(2), .boxes:nth-child(4), .boxes:nth-child(9)  {
+    background-color: rgb(215, 184, 151);
+}
+
+.boxes:nth-child(3), .boxes:nth-child(5), .boxes:nth-child(7)  {
+    background-color: rgb(95, 58, 19);
+}
+
+.box-grid2, .box-grid3 {
+    display: grid;
+    grid-template-columns:  repeat(16, 50px);
+    grid-template-rows: repeat(16, 50px);
+    width: 70%;
+    height: 100%;
+    border: 1px solid red;
+    grid-gap: 5px;
+    padding: 5px;
+}
+
+.min-box2 {
+    border: 1px solid rgb(9, 9, 9);
+  
+}
+
+/* .min-box2:nth-child(4n+4) {
+    background-color: rgb(215, 184, 151);
+} */
+.min-box2:nth-child(3n) {
+    background-color: rgb(84, 28, 5);
+}
+
+.min-box2:nth-child(3n-1), .min-box2:nth-child(3n+5) {
+    background-color:rgb(220, 213, 213);
+} 
+
+.min-box2:nth-child(3n-2) {
+    background-color: orange;
+} 
+
+.min-box3:nth-child(4n-1) {
+    background-color: rgb(255, 255, 255);
+}
+
+.min-box3:nth-child(4n-2), .min-box2:nth-child(3n+5) {
+    background-color:rgb(134, 134, 134);
+} 
+
+.min-box3:nth-child(4n-3) {
+    background-color: rgb(50, 50, 50);
+} 
+
+.min-box3:nth-child(4n) {
+    background-color: rgb(0, 0, 0);
+} 
+
+.test2 {
+    width: 70%;
+    height: 400px;
+    border: 1px solid red;
+    background: white;
+    background-image:
+        linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 0), 
+        linear-gradient(rgba(200,0,0,.5) 50%, transparent 0);
+
+    background-size: 30px 30px;
+}
