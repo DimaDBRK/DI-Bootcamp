@@ -1,0 +1,128 @@
+/* -- Google fonts -- */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* -- Utilities -- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+body {
+    font-family: Raleway;
+    }
+    
+a {
+    text-decoration: none;
+    }
+    
+li {
+    list-style: none;
+    }
+
+
+/* -- Temp style -- */
+
+div {
+    border: 1px solid red;
+}
+
+/* -- Navbar styling -- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    color: lightgrey;
+}
+
+.nav-links a {
+    color: lightgrey;
+}
+
+.logo {
+    font-size: 32px;
+}
+
+.logo a{
+    color: white;
+}
+/* -- Navbar menu -- */
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li a:hover {
+    color: white;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 4px 10px;
+}
+
+/* -- Checkbox feature -- */
+input[type=checkbox] {
+    display: none;
+} 
+
+/* -- Hamburger menu -- */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+
+/* -- Media queries -- */
+
+@media (max-width: 768px) {
+/* Menu */
+    .menu {
+        display:none;
+        position: absolute;
+        background-color:rgb(255, 255, 255);
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+
+   .nav-links a {
+    color: grey;
+    }
+
+    .menu li a:hover {
+        color: black;
+        transition: 0.3s ease;
+    }
+    
+
+    /* .menu li:hover {
+        display: inline-block;
+        background-color:#000000;
+        transition: 0.3s ease;
+    } */
+
+        
+    .hamburger {
+        display: block;
+    }
+    
+    input[type=checkbox]:checked ~ .menu {
+        display: block;
+        
+    }
+
+    input[type=checkbox]:checked .check-on {
+        visibility: hidden;
+    }
+         
+  
+    
+}
