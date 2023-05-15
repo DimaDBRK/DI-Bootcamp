@@ -79,7 +79,17 @@ class Farm:
     def get_short_info(self) :
         
         # out_str = (f'[{self.get_animal_types()[i]}']) for i in self.animals
-        out_str = f'{macdonald.name}`s farm has: {", ".join(item for item in macdonald.get_animal_types())}.'
+    
+        update_list = macdonald.get_animal_types()
+        
+        # 15.05 after review in class I should add "s" symbols to animals with
+        # q-ty more one and add "and" before last one animal:
+        for item in range(len(update_list)):
+            for i in range(len(self.animals)) :
+                if update_list[item] == self.animals[i][0] and self.animals[i][1] > 1:
+                    update_list[item] += "s"
+                
+        out_str = f'{macdonald.name}`s farm has: {", ".join(item for item in update_list[0:-1])} and {update_list[-1]} .'
         return out_str
     
 # Main
