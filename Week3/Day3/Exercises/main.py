@@ -127,7 +127,11 @@ class Currency:
                 return res     
             # return repr(self) #f'{self.amount} {self.currency}'
             else :
-                raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
+                # raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
+                try : #update 17.05 after class explanation
+                    raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
+                except TypeError as error:
+                    print(TypeError.__name__, error)
                 
     # for +=
     def __iadd__(self, second) :
@@ -143,7 +147,12 @@ class Currency:
                 # print(f'{self.amount} {self.currency}')
                 # return f'{self.amount} {self.currency}'   
             else :
-                raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")   
+                # raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")   
+                try : #update 17.05 after class explanation
+                    raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
+                except TypeError as error:
+                    print(TypeError.__name__, error)
+        
         return self
 # Driver
 c1 = Currency('dollar', 5)
