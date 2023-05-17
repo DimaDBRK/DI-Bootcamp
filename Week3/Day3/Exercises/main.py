@@ -121,16 +121,17 @@ class Currency:
             return res           
             # return repr(self) #f'{self.amount} {self.currency}'
         else  :
-            if self.currency == second.currency :
-                res = self.amount + second.amount
-                print(res)
-                return res     
+            try : #update 17.05 after class explanation
+                if self.currency == second.currency :
+                    res = self.amount + second.amount
+                    print(res)
+                    return res     
             # return repr(self) #f'{self.amount} {self.currency}'
-            else :
+                else :
                 # raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
-                try : #update 17.05 after class explanation
+               
                     raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
-                except TypeError as error:
+            except TypeError as error:
                     print(TypeError.__name__, error)
                 
     # for +=
@@ -140,17 +141,17 @@ class Currency:
             print(f'{self.amount} {self.currency}')
             
         else :
-           
-            if self.currency == second.currency :
-                print("+= c1 and c2, retuern self:")
-                self.amount = self.amount + second.amount
+            try : #update 17.05 after class explanation
+                if self.currency == second.currency :
+                    print("+= c1 and c2, retuern self:")
+                    self.amount = self.amount + second.amount
                 # print(f'{self.amount} {self.currency}')
                 # return f'{self.amount} {self.currency}'   
-            else :
+                else :
                 # raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")   
-                try : #update 17.05 after class explanation
+                    
                     raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{second.currency}>")
-                except TypeError as error:
+            except TypeError as error:
                     print(TypeError.__name__, error)
         
         return self
