@@ -45,7 +45,7 @@ class Text() :
 # Implement the following methods:
 
     def freq_of_all(self) : #returm dic word -qty in text
-        lst = self.text_str.lower().split()
+        lst = self.text_str.lower().replace('.','').split() #18.05 after class review added "." to split
         words = {}
         for items in lst:
             if items not in words:
@@ -68,7 +68,10 @@ class Text() :
     #a method that returns the most common word in the text.
     def common_word(self) :
         dic = self.freq_of_all()
-        return max(dic, key=dic.get)
+        max_qty = max(dic.values()) #updated 18.05 after review in class
+        res = [item for item, q in dic.items() if q == max_qty]
+        # max = max(dic, key=dic.get)
+        return res #max(dic, key=dic.get)
     
     
     # a method that returns a list of all the unique words in the text.
@@ -82,7 +85,7 @@ class Text() :
          #path to file
         dir_path = os.path.dirname(os.path.realpath(__file__))
     
-        with open((dir_path+"\\" + filename), "r") as file_in:
+        with open((dir_path+"\\" + filename), "r") as file_in :
             new_text = file_in.read()
         return cls(new_text)
 
@@ -131,7 +134,7 @@ class TextModification(Text) :
         return str
     
 #input data
-text_input = "A good book would sometimes cost as much as a good house a ."
+text_input = "A good book would sometimes cost as much as a good house."
 # tests
 a = Text(text_input)
 print(a.freq_of_all())
