@@ -1,6 +1,7 @@
 # Week4 Day4
 # Dmitry Dubrov
 # Exercises XP
+# Feature - you can insert price or name or both for update in on line in any order
 
 # Exercise 1 : Restaurant Menu Manager
 # Part 2
@@ -21,7 +22,7 @@ import psycopg2
 
 def show_user_menu():
     while True:
-        print("Program menu:\n")
+        print("\n***Program menu:***\n")
         print('''View an Item (V)
 Add an Item (A)
 Delete an Item (D)
@@ -33,8 +34,9 @@ Exit (Q,E)
         user_in = ''.join(user_in.split())
         if user_in in ["v",'a','d','u','s','q','e']:
             if user_in in ['q','e']:
-                print('Exit!')
+                
                 show_restaurant_menu()
+                print('Exit!')
                 break
             elif user_in == 'v':
                 print('View an Item.')
@@ -51,15 +53,15 @@ Exit (Q,E)
             elif user_in == 'u':
                 print('Update an Item.')
                 update_item_from_menu()
-                input('Press Enter to start')
+                input('Press Enter to go')
                 
             elif user_in == 's':
                 print('Show the Menu:')
                 show_restaurant_menu()
-                input('Press Enter to start')
+                input('Press Enter to go')
         else:
             print("Wrong input. Try again.")
-            input('Press Enter to start')
+            input('Press Enter to go')
 
 def is_number(str):
     try:
@@ -79,10 +81,10 @@ def view_item():
     res = MenuManager.get_by_name(name)
     if res != None:
         print(f'There is: {res[0]} , with prise: {res[1]}.')
-        input('Press Enter to start')
+        input('Press Enter to go')
     else: 
         print(f'In menu there is now {name}.')
-        input('Press Enter to start')
+        input('Press Enter to go')
   
 def remove_item_from_menu():
     nm = input('Input name of Item for remove: ')
@@ -94,13 +96,13 @@ def remove_item_from_menu():
         check_after = MenuManager.get_by_name(nm)
         if check_after == None:
             print(f'Items with name: {nm} and price: {check_before[1]} was deleted.')
-            input('Press Enter to start')
+            input('Press Enter to go')
         else:
             print(f'Error. There is still item {check_after}')
-            input('Press Enter to start')
+            input('Press Enter to go')
     else:
         print(f'''Item with name: {nm} doesn't exist. Try new name.''')
-        input('Press Enter to start')              
+        input('Press Enter to go')              
 
 def add_item_to_menu():
     nm = input('Input name: ')
@@ -133,35 +135,32 @@ def update_item_from_menu():
         check = MenuManager.get_by_name(nm)
         if check == (nm,pr):
             print(f'Item with name: {nm} and price: {pr} are in Menu. \nIt could be updated.')
-            print('Input new information - name or price, or both (n or Enter+)')
-            new_info_name = input("New name:").strip().split(",")
+            print('Input new information - name or price, or both (splyt by , in any order).')
+            new_info_name = input("New info for update:").strip().split(",")
             if len(new_info_name) > 2 or len(new_info_name) == 0 or new_info_name in ['']:
                 print('Wrong data type. Try again.')
             
             else: 
                 
-                for item in new_info_name:
-                    if item.isnumeric():
-                        item = int(item)
-                  
+                for i in range(len(new_info_name)):
+                    if new_info_name[i].isnumeric():
+                        new_info_name[i] = int(new_info_name[i])
+                        
+                print(new_info_name) 
                 item_update = MenuItem(nm, pr)
                 if len(new_info_name) == 2:
                     item_update.update(new_info_name[0],new_info_name[1])
                 else:
                     item_update.update(new_info_name[0])
-
+                print('Item was updated.')
                 
         elif check == None:
             print('Problem, check table.')
-            input('Press Enter to start')
+            input('Press Enter to go')
                         
     else:
         print('Wrong data type. Try again.')
-        input('Press Enter to start')
+        input('Press Enter to go')
     
 #Driver           
 show_user_menu()
-# print(is_number('123.3'))
-
-
-# new_info_price = input("New price:").strip()

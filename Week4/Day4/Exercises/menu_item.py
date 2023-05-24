@@ -51,7 +51,6 @@ class MenuItem:
                         return result
                     else:
                         print('INSERT')
-                        print(query)
                         cursor.execute(query)
                         connection.commit()
         except:
@@ -100,10 +99,3 @@ VALUES ('{self.name}', {self.price})'''
         self.manage_connection(query)
           
 #Driver
-item = MenuItem('Water', 10)
-# item1 = MenuItem('Burger', 10)
-# item.save()
-# item1.save()
-# item.delete()
-item.update("Water_cold", 17)
-#Test

@@ -59,7 +59,6 @@ SELECT  item_name, item_price FROM Menu_Items
                         return result
                     else:
                         print('INSERT')
-                        print(query)
                         cursor.execute(query)
                         connection.commit()
         except:
@@ -72,9 +71,3 @@ SELECT  item_name, item_price FROM Menu_Items
 
 #Driver
 
-#Tests
-# item2 = MenuManager.get_by_name('soap')
-# print(item2)
-# items = MenuManager.all_items()
-# print(items)
-    
