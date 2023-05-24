@@ -18,7 +18,7 @@
 -- CREATE TABLE Customer_profile (
 -- 	id SERIAL PRIMARY KEY,
 -- 	isLoggedIn Boolean DEFAULT FALSE,
--- 	customer_id INTEGER,
+-- 	customer_id INTEGER UNIQUE, -- updated 24.05 after class review
 -- 	FOREIGN KEY (customer_id) REFERENCES Customer(id)
 -- 	);
 	
@@ -46,7 +46,7 @@
 -- (False, (SELECT id FROM Customer WHERE first_name = 'Jerome'))
 -- ;
 
--- SELECT * FROM Customer_profil	e
+-- SELECT * FROM Customer_profile
 
 -- 4. Use the relevant types of Joins to display:
 
@@ -63,6 +63,8 @@
 -- SELECT COUNT(*) AS notlogin FROM Customer AS C
 -- LEFT JOIN Customer_profile AS CP ON C.id = CP.customer_id
 -- WHERE isLoggedIn != true;
+-- Variant 2:
+-- WHERE isLoggedIn IS  NOT true;
 
 -- Part II:
 
