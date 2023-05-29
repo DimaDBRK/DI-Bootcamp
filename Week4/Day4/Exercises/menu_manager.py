@@ -46,7 +46,7 @@ SELECT  item_name, item_price FROM Menu_Items
             connection = psycopg2.connect(
                 host='localhost',
                 port = '5432',
-                database='Menu',
+                database='Public',
                 user='postgres',
                 password='Kachkanar'
             )

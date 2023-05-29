@@ -1,0 +1,90 @@
+{
+    "animals": [
+        {
+            "id" :1,
+            "name": "Dog",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 2
+        },
+        {
+            "id": 2,
+            "name": "Domestic Cat",
+            "legs": 2,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 1
+        },
+        {
+            "id": 3,
+            "name": "Panther",
+            "legs": 2,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 1 
+        },
+        {
+            "id": 4,
+            "name": "Bear",
+            "legs": 4,
+            "weight": 15.67,
+            "height":14.2,
+            "speed": 134,
+            "family": 3 
+        },
+        {
+            "id": 4,
+            "name": "White Bear",
+            "legs": 4,
+            "weight": 115.67,
+            "height":114.2,
+            "speed": 234,
+            "family": 3 
+        },
+        {
+            "id": 5,
+            "name": "Black Bear",
+            "legs": 4,
+            "weight": 315.67,
+            "height":314.2,
+            "speed": 500,
+            "family": 3 
+        }
+    ],
+    "families": [
+        {
+            "id": 1,
+            "name": "Felidae"
+        },
+        {
+            "id": 2,
+            "name": "Caninae"
+        },
+        {
+            "id": 3,
+            "name": "Mammal"
+        },
+        {
+            "id": 4,
+            "name": "Reptile"
+        },
+        {
+            "id": 5,
+            "name": "Insect"
+        },
+        {
+            "id": 6,
+            "name": "Arachnid"
+        },
+        {
+            "id": 7,
+            "name": "Amphibian"
+        }      
+
+
+    ]
+}

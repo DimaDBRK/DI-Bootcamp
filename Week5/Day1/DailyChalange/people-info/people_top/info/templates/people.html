@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Homepage</title>
+    </head>
+    <body>
+        <h1>Information about {{name}} sorted by Age: </h1>
+        <ul>
+            {% for item in people_list%} 
+            <li>Name: {{item.name}}. <a href="{{item.id}}">click</a>  </li>
+            <li style="list-style-type: none"><small>is {{item.age}} yo, from {{item.country}}, ID: {{item.id}}</small></li>
+            {% endfor %} 
+
+            {% comment %} People [{'id': 3, 'name': 'Fabio Alberto', 'age': 18, 'country': 'Italy'} {% endcomment %}
+        </ul>
+    </body>
+</html>
