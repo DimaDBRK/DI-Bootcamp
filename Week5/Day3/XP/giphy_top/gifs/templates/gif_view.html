@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Categories</title>
+<nav>
+    <a href="/homepage">Homepage</a>
+</nav>
+</head>
+<body>
+    
+    <h1>Gif info:  </h1>
+    <p>Name: {{gif.title}} </p>
+    <img src="{{gif.url}}" alt="{{gif.title}}">
+    <p>Link: {{gif.url}} </p>
+    <p>Upload by: {{gif.uploader_name}} </p>
+    <h3>Categiries fro this list</h3>
+    <ul>
+    {% for items in category%}
+       <li>{{items.id}}. {{items.name}}" <a href="/categorygif/{{items.id}}">Link to Category view </a></li>
+    {% endfor %}
+    
+</body>
+</html>
