@@ -1,5 +1,5 @@
 """
-URL configuration for animals project.
+URL configuration for fooweb project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,12 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from info.views import family_get 
-from info.views import animal_get
+from info.views import phone_sh
+from info.views import name_sh
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('family/<int:id>/', family_get),
-    path('animal/<int:id>/', animal_get),
-    
+    path('persons/<int:phone_number>', phone_sh, name = 'phone'), #for search by phone
+    path('persons/<str:name>', name_sh, name = 'name'), #for search by name
 ]

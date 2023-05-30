@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Homepage</title>
+    </head>
+    <body>
+        <h1>Information about all animal: </h1>
+       
+        {%for animal in animal_list%}
+            <h3>Name - {{animal.name}} with ID - {{animal.id}}</h3>
+            <p>
+                legs =  {{animal.legs}}<br>
+                weight =  {{animal.weight}}<br>
+                height =  {{animal.height}}<br>
+                speed =  {{animal.speed}}<br>
+                link to details <a href = "{{animal.id}}">click</a>
+            </p>
+        {% endfor %}
+     
+         
+    </body>
+</html>

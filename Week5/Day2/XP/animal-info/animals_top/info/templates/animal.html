@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+{% comment %} X is the ID (primary key) of the given animal. Should show all the information about the given animal. {% endcomment %}
+
+
+{% comment %} {%for animal in animal_list%} {% endcomment %}
+    <h2>Animal has name {{animal.name}} and ID: {{animal.id}} </h2>
+    <h1>Animals family {{family.name}} with id = {{family.id}} </h1><br>
+    <p>
+        legs =  {{animal.legs}}<br>
+        weight =  {{animal.weight}}<br>
+        height =  {{animal.height}}<br>
+        speed =  {{animal.speed}}<br>
+    </p>
+{% comment %} {% endfor %} {% endcomment %}
+
+</body>
+</html>

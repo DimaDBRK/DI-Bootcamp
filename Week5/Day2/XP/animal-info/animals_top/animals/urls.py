@@ -16,12 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from info.views import family_get 
-from info.views import animal_get
+from info.views import family_id
+from info.views import animal_id
+from info.views import animals_list
+from info.views import id_get
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('family/<int:id>/', family_get),
-    path('animal/<int:id>/', animal_get),
+    path('family/<int:id>/', family_id),
+    path('animal/<int:id>/', animal_id),
+    path('animals/', animals_list, name = 'list'), #for list of animals
+    path('animals/<int:id>', id_get, name = 'details'), #for 1 animal
     
 ]

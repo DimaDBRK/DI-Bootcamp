@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Animals family {{family_name.name}} with id = {{family_name.id}} </h1><br>
+{%for animal in animal_list%}
+    <h3>Animal {{animal.name}} ID {{animal.id}}</h3>
+    <p>
+        legs =  {{animal.legs}}<br>
+        weight =  {{animal.weight}}<br>
+        height =  {{animal.height}}<br>
+        speed =  {{animal.speed}}<br>
+    </p>
+{% endfor %}
+
+</body>
+</html>
