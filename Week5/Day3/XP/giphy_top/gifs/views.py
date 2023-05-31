@@ -1,6 +1,12 @@
 from django.shortcuts import render
+import psycopg2
 from .models import Gif, Category
 from .forms import GifForm, CategoryForm
+import requests
+import os
+import json
+import urllib.request
+from urllib import parse, request
 
 # Create your views here.
 def add_new_gif(request):
@@ -78,3 +84,46 @@ def gif_id(request, id : int):
               'category': category_list}
     
     return render(request, 'gif_view.html', context)
+
+# XP Gold update urls
+def add_from_api(request):
+    url = "http://api.giphy.com/v1/gifs/search"
+    category = ['fun','cook', 'smile','sport','sleep','eat','drive','learn','duck','dog']
+    qty_in_req = 10
+    author = 'API'
+    for categ in category:
+        params = parse.urlencode({
+        "q": categ,
+        "api_key": "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My",
+        "limit": qty_in_req,
+        "rating": "g" # 
+        })
+
+        try:
+            with urllib.request.urlopen("".join((url, "?", params))) as response:
+                data = json.loads(response.read())
+
+    
+            if response.status == 200:
+                for item in data['data']:
+                    title_res = item["title"] if len(item["title"]) >=1 else "No info"
+                    url_res = item["images"]["fixed_height"]["url"].split("?")[0]
+                    url_res = url_res if '.gif' in url_res else "https://no.url"
+                
+                # Insert in the database
+                if url_res != "https://no.url":
+                    Gif.objects.create(title = title_res, url = url_res, uploader_name = author)
+                                     
+            else:
+                print(f"Error:")
+                
+        except requests.exceptions.RequestException as e:
+            print(f"Error: {e}")
+            
+            #    Getting all the stuff from database
+        query_results = Gif.objects.filter(uploader_name = 'API')
+
+                    # Creating a dictionary to pass as an argument
+        context = { 'query_results' : query_results }
+        
+    return render(request, 'addfromapi.html', context)

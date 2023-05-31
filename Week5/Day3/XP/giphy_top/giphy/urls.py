@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gifs.views import add_new_gif, add_new_category, all_gifs, category_info, categories_list, gif_id
+from gifs.views import add_new_gif, add_new_category, all_gifs, category_info, categories_list, gif_id, add_from_api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +26,5 @@ urlpatterns = [
     path('categorygif/', categories_list),
     path('categorygif/<int:id>', category_info, name = 'details'), #
     path('gif/<int:id>', gif_id), #forgif id
+     path('addfromapi/', add_from_api), #forgif id
 ]

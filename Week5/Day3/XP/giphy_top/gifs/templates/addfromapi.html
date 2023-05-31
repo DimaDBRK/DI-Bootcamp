@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+<h1>Add from API</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Link</th>
+        <th>Url</th>
+      
+    </tr>
+    {% for item in query_results %}
+        <tr> 
+            <td>{{ item.title }}</td>
+            <td><a href="/gif/{{item.id}}">Link</a></td>
+            <td>{{ item.url }}</td>
+           
+            
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
