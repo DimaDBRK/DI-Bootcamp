@@ -10,32 +10,34 @@ from urllib import parse, request
 
 # Create your views here.
 def add_new_gif(request):
-   
+    
+    
     if request.method == 'POST':
-        form = GifForm(request.POST)
+        filled_form = GifForm(request.POST)
         # check if it's valid:
-        if form.is_valid():
-            gif_to_add = form.save()
-            #return redirect('post_create')
+        if filled_form.is_valid():
+            filled_form.save()
+            
     else:
-        form = GifForm()
-        
-    context = {'form': form}
+        filled_form = GifForm()
+    
+    post_form = GifForm()   
+    context = {'form': post_form}
     
     return render(request, 'newgif.html', context)
 
 def add_new_category(request):
    
     if request.method == 'POST':
-        form = CategoryForm(request.POST)
+        data = request.POST
+        filled_form   = CategoryForm(data)
         # check if it's valid:
-        if form.is_valid():
-            gif_to_add = form.save()
-            #return redirect('post_create')
-    else:
-        form = CategoryForm()
+        if filled_form.is_valid():
+            filled_form.save()
+            
         
-    context = {'form': form}
+    filled_form = CategoryForm()   
+    context = {'form': filled_form}
     
     return render(request, 'newcategory.html', context)
 
@@ -89,7 +91,7 @@ def gif_id(request, id : int):
 def add_from_api(request):
     url = "http://api.giphy.com/v1/gifs/search"
     category = ['fun','cook', 'smile','sport','sleep','eat','drive','learn','duck','dog']
-    qty_in_req = 10
+    qty_in_req = 2
     author = 'API'
     for categ in category:
         params = parse.urlencode({

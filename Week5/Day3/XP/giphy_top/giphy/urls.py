@@ -26,5 +26,5 @@ urlpatterns = [
     path('categorygif/', categories_list),
     path('categorygif/<int:id>', category_info, name = 'details'), #
     path('gif/<int:id>', gif_id), #forgif id
-     path('addfromapi/', add_from_api), #forgif id
+    path('addfromapi/', add_from_api), #forgif id
 ]
