@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<nav>
+    <a href="/gifs">Add new Gif</a>
+    <a href="/categories">Add new Category</a>
+</nav>
+</head>
+<body>
+    {% comment %} Navbar {% endcomment %}
+    <h1>Gifs with positive likes:  </h1>
+    {% for items in gifs%}
+        <img src="{{items.url}}" alt="{{items.title}}">
+        <a href="/gif/{{items.id}}">Link</a>
+        <p>Likes: {{items.likes}}</p>
+    {% endfor %}
+    
+</body>
+</html>

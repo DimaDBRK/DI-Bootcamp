@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Categories</title>
+<nav>
+    
+    <a href="/homepage">Homepage</a>
+</nav>
+</head>
+<body>
+    
+    <h1>Categories:  </h1>
+    <ul>
+    {% for items in categories%}
+       <li>{{items.id}}. {{items.title}}" <a href="/categorygif/{{items.id}}">Link to Category view </a></li>
+    {% endfor %}
+    
+</body>
+</html>

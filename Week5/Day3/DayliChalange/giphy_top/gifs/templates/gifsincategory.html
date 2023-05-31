@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<a href="/homepage">Homepage</a>
+
+</head>
+<body>
+    {% comment %} Navbar {% endcomment %}
+    <h1>Gifs in category {{category.name}}  </h1>
+    <p> list:{{gifs}} </p>
+    {% for items in gifs%}
+        <img src="{{items.url}}" alt="{{items.title}}">
+    {% endfor %}
+    
+</body>
+</html>
