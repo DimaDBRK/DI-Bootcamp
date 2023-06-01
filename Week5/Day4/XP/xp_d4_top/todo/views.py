@@ -90,7 +90,7 @@ def display_todos_v2 (request):
         todo.save()
         
     
-    todo_list = Todo.objects.all()  
+    todo_list = Todo.objects.all().order_by('title')  
     todo_forms = []
     for todo in todo_list:
         form = DoneForm(initial = {'isinstance': todo})

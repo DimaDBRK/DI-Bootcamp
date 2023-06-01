@@ -10,8 +10,8 @@ class TodoForm(forms.ModelForm):
             'deadline_date': forms.DateInput(attrs={'type':'date'})}
         
 class DoneForm(forms.Form):
-    isinstance = forms.ModelMultipleChoiceField(queryset=Todo.objects.all(),)
-                                                # widget = forms.HiddenInput())
+    isinstance = forms.ModelMultipleChoiceField(queryset=Todo.objects.all(),
+                                                widget = forms.HiddenInput())
         
 class CategoryForm(forms.ModelForm):
     class Meta:
