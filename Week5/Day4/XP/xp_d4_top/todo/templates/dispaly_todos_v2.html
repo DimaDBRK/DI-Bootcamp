@@ -1,0 +1,33 @@
+{%laod static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href ="{% static 'style.css'}">
+<title>ALL TODOS</title>
+</head>
+
+<body>
+    <h1>Todo list on: <small>{{today}}</small></h1>
+  
+    {% comment %} the title, the details,
+    the date_creation, the deadline_date,
+    the category of the todo,
+    a button “DONE” (see Exercise XP Gold) {% endcomment %}
+  
+    {%for todo, form in todos_forms%}
+    
+           <p>
+            {{todo.title}}
+            </p>
+    
+    DONE: 
+    <form method = "post">
+        {%csrf_token%}
+        {{form}}
+     
+        <button type ='submit'>Done</button>
+    </form>
+    {%endfor%}
+
+</body>
+</html>

@@ -10,7 +10,7 @@ class Todo(models.Model):
     date_creation = models.DateField(auto_now_add=True)
     date_completion  = models.DateField(blank=True, null=True)
     deadline_date = models.DateField(blank=True, null=True)
-    category = models.ForeignKey('Category', on_delete= models.CASCADE) # one to many
+    category = models.ForeignKey('Category', on_delete= models.CASCADE, related_name='todos') # one to many
     
     def __str__(self):
         return f'{self.category} | {self.title}'

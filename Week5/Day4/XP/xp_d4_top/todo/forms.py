@@ -5,12 +5,18 @@ class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = '__all__'
-        exclude = ('date_creation','has_been_done')
+        exclude = ('date_creation','has_been_done','date_completion')
+        widgets = {
+            'deadline_date': forms.DateInput(attrs={'type':'date'})}
         
-class DoneForm(forms.ModelForm):
+class DoneForm(forms.Form):
+    isinstance = forms.ModelMultipleChoiceField(queryset=Todo.objects.all(),)
+                                                # widget = forms.HiddenInput())
+        
+class CategoryForm(forms.ModelForm):
     class Meta:
-        model = Todo
-        fields = '__all__'
+        model = Category
+        fields = '__all__'     
         # fields = ('has_been_done','')
         # widgets = {
         #            'has_been_done': forms.HiddenInput(), #like CSS

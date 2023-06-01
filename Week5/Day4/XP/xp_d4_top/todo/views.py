@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from datetime import date
 from .models import Todo, Category
-from .forms import TodoForm, DoneForm
+from .forms import TodoForm, DoneForm, CategoryForm
 
 # Create your views here.
 def add_todo_view(request):
@@ -9,18 +9,34 @@ def add_todo_view(request):
     if request.method == 'POST':
         data = request.POST
         filled_form = TodoForm(data)
-        filled_form.save()
-        
-        # print('POST:', data)
-    # print()
-    # name = request.GET['name']
-    
+        if filled_form.is_valid():
+            filled_form.save()
+        else:
+            print(filled_form.errors)
+         
+    #Get
     post_form = TodoForm(initial={'title':'New todo'})
     
     context = {'form':post_form}
     
     return render(request, 'add_todo.html', context)
 
+def add_category_view(request):
+    
+    if request.method == 'POST':
+        data = request.POST
+        filled_form = CategoryForm(data)
+        if filled_form.is_valid():
+            filled_form.save()
+        else:
+            print(filled_form.errors)
+         
+    #Get
+    post_form = CategoryForm()
+    
+    context = {'form':post_form}
+    
+    return render(request, 'add_category.html', context)
 
 def display_todos (request):
     # this view will display all the todos from the database.
@@ -56,6 +72,37 @@ def display_todos (request):
               }
     
     return render(request, 'dispaly_todos.html', context)
+
+
+def display_todos_v2 (request):
+    # this view will display all the todos from the database.
+    today =  date.today()
+  
+   
+    
+    if request.method == 'POST':
+        data = request.POST
+        print(data)
+        todo = Todo.objects.get(id = data['isinstance'])
+        print(todo)
+        todo.has_been_done = True
+        todo.date_completion = date.today()
+        todo.save()
+        
+    
+    todo_list = Todo.objects.all()  
+    todo_forms = []
+    for todo in todo_list:
+        form = DoneForm(initial = {'isinstance': todo})
+        todo_forms.append((todo, form))
+   
+    
+    context ={'todos_forms': todo_forms,
+              'today': today,
+              }
+    
+    return render(request, 'dispaly_todos_v2.html', context)
+
 
 
 
