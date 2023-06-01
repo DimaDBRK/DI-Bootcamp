@@ -1,0 +1,16 @@
+<title>NEW TODO</title>
+</head>
+<style>
+    .content_class {
+        background-color: green;
+    }
+</style>
+<body>
+    <h1> Forms to add new Todo: </h1>
+    <form  method ='post'>
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type = 'submit' style ="background-color: green;">Submit</button>
+    </form>
+</body>
+</html>

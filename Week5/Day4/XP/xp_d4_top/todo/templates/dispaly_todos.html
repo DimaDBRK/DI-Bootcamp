@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ALL TODOS</title>
+</head>
+<style>
+    .button_done = {
+        background-color: green;
+    }
+    .button_notdone = {
+        background-color: red;
+    }
+
+</style>
+<body>
+    <h1>Todo list on: <small>{{today}}</small></h1>
+  
+    {% comment %} the title, the details,
+    the date_creation, the deadline_date,
+    the category of the todo,
+    a button “DONE” (see Exercise XP Gold) {% endcomment %}
+
+    {%for item in todos%}
+    <br><p> Title: {{item.title}}<p> <p>Title: {{item.details}}</p>
+    <p>date: {{item.date_creation}}<p>
+    <p>deadline: {{item.deadline_date}}</p>
+    <p>category: {{item.category}}</p>
+    <p>id: {{item.id}}<p>
+    
+    <form action = "" method ='post'>
+        {%csrf_token%}
+        {% if item.has_been_done  %}
+            <button name = "Done" value = "{{item.id}}" style = 'background-color: green;'> {{item.id}} Done on: {{item.date_completion}} </button><br>
+        {% endif %}
+        {% if not item.has_been_done  %}
+            <button name = "Done" value = "{{item.id}}" style = 'background-color: red;'> {{item.id}} NotDone</button><br>
+        {% endif %}
+    </form>
+    
+    <form id="v2" method="POST" action="/display_todos/{{item.id}}">
+        {% csrf_token %}
+        <button type='submit' style="background-color:yellow;">DONE to page</button>
+    
+    </form>
+    {%endfor%}
+
+</body>
+</html>

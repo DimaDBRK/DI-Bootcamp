@@ -1,0 +1,168 @@
+2023-05-31 19:56:11,610 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
+2023-05-31 19:56:18,104 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
+2023-05-31 19:59:33,073 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
+2023-05-31 20:10:33,836 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
+2023-05-31 20:13:11,825 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
+2023-05-31 20:15:15,417 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
+2023-05-31 20:18:03,611 [ERROR] Error sending SMS
+Traceback (most recent call last):
+  File "c:\Dima\1_Israel\Dev_Inst\Hackathons\Hackathon1\send_sms.py", line 76, in send_sms
+    message = client.messages.create( # Create and send SMS for each phone number
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\rest\api\v2010\account\message\__init__.py", line 551, in create
+    payload = self._version.create(
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 465, in create
+    return self._parse_create(method, uri, response)
+  File "C:\Users\dmitr\AppData\Local\Programs\Python\Python39\lib\site-packages\twilio\base\version.py", line 436, in _parse_create
+    raise self.exception(method, uri, response, "Unable to create record")
+twilio.base.exceptions.TwilioRestException: 
+[31m[49mHTTP Error[0m [37m[49mYour request was:[0m
+
+[36m[49mPOST /Accounts/ACdf0647ef43e29f89e08d929590bcecbc/Messages.json[0m
+
+[37m[49mTwilio returned the following information:[0m
+
+[34m[49mUnable to create record: Authenticate[0m
+
+[37m[49mMore information may be available here:[0m
+
+[34m[49mhttps://www.twilio.com/docs/errors/20003[0m
+
+
