@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+   
+    <h1>Rental info: {{rental.id}}</h1>
+    <h4>Customer details</h4>
+    <p>Name - <a href = "/rent/customer/{{customer.id}}">{{customer.first_name}} {{customer.last_name}}</a></p>
+    <p>email - {{customer.email}} phone_number {{customer.phone_number}}</p>
+    
+    <h4>Vehicle details</h4>
+   
+    <p><a href = "/rent/vehicle/{{vehicle.id}}"> {{vehicle.id}} Type - {{vehicle.vehicle_type.name}} with {{vehicle.size}}</a></p>
+    
+    <h4>Rental details</h4>
+        
+    <p>{{rental.id}} rental date - {{rental.rental_date}} </p>
+
+    {% if rental.return_date == None   %}
+        <p>Status: “Not yet returned”<p>
+        <form method = "post">
+                {%csrf_token%}
+                {{rental_form}}
+                <button type ='submit'>Return</button>
+        </form>
+        
+
+    {% endif %}
+
+    {% if rental.return_date != None   %}
+        <p>Status: “Returned on: {{rental.return_date}}”  <p>
+    {% endif %}
+    
+    <a href = "/rent/rental/">Main list</a>
+  
+
+</body>
+</html>

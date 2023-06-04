@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+
+    <h1>List of all vehicles: {{today}} </h1>
+        {%for item in types%}
+            <h3>Vehicle type: {{item}} </h3>
+            {%for vehicle_id, status in vehicles_status%}
+                {% if vehicle_id.vehicle_type == item  %}
+                    <p><a href = "/rent/vehicle/{{vehicle_id.id}}">Vehicle ID {{vehicle_id.id}}</a> 
+                        {% if status  %}
+                        Not Avalible
+                        {% else  %}
+                        Avalible
+                        {%endif%}
+                    </p>
+                {%endif%}
+            {%endfor%}
+        {%endfor%}
+   
+</body>
+</html>

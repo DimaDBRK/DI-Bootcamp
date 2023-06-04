@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    {%csrf_token%}
+    <h1>Vehicle info: {{vehicle.id}}</h1>
+   
+    <p>Type - {{vehicle.vehicle_type.name}}</p>
+    <p>Size - {{vehicle.size}}</p>
+    <p>Date created - {{vehicle.date_created}}</p>
+    <p>Real cost - {{vehicle.real_cost}}</p>
+
+
+    <a href = "/rent/vehicle/">Vehicles list</a>
+
+
+    <h4>Rental details</h4>
+        
+    
+
+    {% if rental == None or  rental.return_date != None   %}
+        <p>Status: “Availible”<p>
+        
+         
+    {% else  %}
+        <p> Status: It’s currently being rented </p>
+        <p> Rental date - {{rental.rental_date}} </p>
+    {% endif %}
+    
+    <a href = "/rent/rental/">Rental list</a>
+  
+
+</body>
+</html>

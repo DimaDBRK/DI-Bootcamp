@@ -1,0 +1,12 @@
+<title>NEW CUSTOMER</title>
+</head>
+
+<body>
+    <h1> Forms to add new Vehicle: </h1>
+    <form  method ='post'>
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type = 'submit' style ="background-color: green;">Submit</button>
+    </form>
+</body>
+</html>
