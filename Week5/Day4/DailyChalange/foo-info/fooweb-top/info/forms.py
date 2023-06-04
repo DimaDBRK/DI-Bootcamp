@@ -3,7 +3,7 @@ from .models import Person
 
 
 # class PersonForm(forms.ModelForm):
-#     class Meta :
+#     class Meta :  
 #         model= Person
 #         fields= 'name', 'phone_number'
         

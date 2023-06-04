@@ -25,5 +25,5 @@ urlpatterns = [
     path('persons/<int:phone_number>', phone_sh, name = 'phone'), #for search by phone
     path('persons/<str:name>', name_sh, name = 'name'), #for search by name
     # path('persons-search/', search_by, name= 'search_by'),
-    path('search-phone/', search_phone, name='search'), #v2
+    path('search/', search_phone, name='search'), #v2
 ]
