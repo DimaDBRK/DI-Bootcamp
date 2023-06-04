@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from info.views import phone_sh
-from info.views import name_sh, search_by
+from info.views import name_sh,  search_phone
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('persons/<int:phone_number>', phone_sh, name = 'Phone_number'), #for search by phone
+    path('persons/<int:phone_number>', phone_sh, name = 'phone'), #for search by phone
     path('persons/<str:name>', name_sh, name = 'name'), #for search by name
-    path('persons-search/', search_by, name= 'search_by')
+    # path('persons-search/', search_by, name= 'search_by'),
+    path('search-phone/', search_phone, name='search'), #v2
 ]
