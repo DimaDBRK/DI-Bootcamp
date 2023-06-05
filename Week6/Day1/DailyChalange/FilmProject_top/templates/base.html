@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title> {% block title %} {% endblock %}</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        
+    </head>
+    <body>
+        <div class="container">
+            <ul class="nav bg-info">
+              <li class="nav-item">
+                <a class="nav-link link-light" href="/homepage">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-light" href="/adddirector">ADD DIRECTOR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-light" href="/addfilm">ADD FILM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-light" href="/addreview">ADD REVIEW</a>
+              </li>
+            </ul>
+          
+            {% block content %}
+            {% endblock %}
+          </div>
+
+          <footer class="bg-light text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 Copyright:
+              <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+    </body>
+</html>

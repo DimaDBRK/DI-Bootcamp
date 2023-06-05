@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} ADD DIRECTOR{% endblock %}
+
+
+{% block content %}
+
+<h1> Add review: </h1>
+    <form  method ='post'>
+        {%csrf_token%}
+        <p>Film: {{form.film}}</p>
+        <p>{{form.review_text}}</p>
+        <div class="radio-buttons">
+            <p>Raiting:</p>
+            {% for radio in form.rating %}
+              <label>{{ radio.tag }} {{ radio.choice_label }}</label>
+            {% endfor %}
+          </div>
+      
+        <button type = 'submit' class="btn btn-primary">Submit</button>
+    </form>
+<br>  
+{% endblock %}

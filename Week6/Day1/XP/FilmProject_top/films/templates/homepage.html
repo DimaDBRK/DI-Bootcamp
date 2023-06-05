@@ -1,0 +1,36 @@
+    {% extends 'base.html' %}
+
+    {% block title %} HOMEPAGE {% endblock %}
+
+
+    {% block content %}
+    <br>
+   
+        {% for film in films %}
+        <div class="card">
+            <h3 class="card-header">{{film.title}}</h3>
+            <p class="card-text">Release date: {{film.release_date}}</p>
+            <p class="card-text">Country: {{film.created_in_country}}</p>
+            <p class="card-text"> Available in countries: 
+                {% for countr in film.available_in_countries.all %}
+                    {{countr}}
+                {% endfor %}
+            </p>
+
+            <p class="card-text"> Category: 
+                {% for category in film.category.all %}
+                    {{category}}
+                {% endfor %}
+            </p>
+
+            <p class="card-text"> Director: 
+            {% for name in film.director.all %}
+                {{name.first_name}} {{name.last_name}}
+            {% endfor %}
+            </p>
+        </div>
+        <br>
+
+        {% endfor %}
+        <br>
+    {% endblock %}
