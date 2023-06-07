@@ -1,0 +1,27 @@
+<ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="{% url 'homepage' %}">HOME</a>
+    </li>
+
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link link-light" href="{% url 'adddirector' %}">ADD DIRECTOR</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="{% url 'addfilm' %}">ADD FILM</a>
+    </li>
+    <li><a class="nav-link link-light" href="{% url 'manage_producers' %}"> MANAGE PRODUCERS</a></li>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <li><a class="nav-link link-light" href="{% url 'profile' user.id %}">PROFILE</a></li>
+    <li><a class="nav-link link-light" href="{% url 'logout' %}">LOGOUT</a></li>
+    
+    
+    {%else %}
+    <li><a class="nav-link link-light" href="{% url 'login' %}">LOGIN</a></li>
+    <li><a class="nav-link link-light" href="{% url 'register' %}">REGISTER</a></li>
+   
+    {% endif %}
+
+  </ul>

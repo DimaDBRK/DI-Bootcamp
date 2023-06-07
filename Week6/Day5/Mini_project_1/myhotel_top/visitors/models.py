@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from accounts.models import UserProfile
+# from accounts.models import UserProfile
 # Create your models here.
 
 # How to connect to user???
@@ -22,10 +22,10 @@ class Room(models.Model):
                                     MinValueValidator(600)
                                     ]
     )
-    room_type = models.ForeignKey('VehicleType', on_delete= models.CASCADE)
+    room_type = models.ForeignKey('RoomType', on_delete= models.CASCADE)
     date_created = models.DateField(auto_now_add=True)
     room_cost = models.FloatField(blank=True, null=True)
-    room_size  = models.ForeignKey('VehicleSize', on_delete= models.CASCADE)
+    room_size  = models.ForeignKey('RoomSize', on_delete= models.CASCADE)
     
     def __str__(self):
         return f'№ {self.room_number}'

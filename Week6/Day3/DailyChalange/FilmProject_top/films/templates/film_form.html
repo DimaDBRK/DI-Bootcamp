@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} ADD FILM{% endblock %}
+
+
+{% block content %}
+
+<h1> Add film: </h1>
+    <form  method ='post'>
+        {%csrf_token%}
+        {{form.as_p}}
+        {{ form.producer.management_form }}
+        {% for form in form.producer %}
+            {{form.as_p}}
+        {% endfor %}
+        <button type = 'submit'>Submit</button>
+    </form>
+<br>
+{% endblock %}

@@ -5,8 +5,8 @@ from django.urls import path
 #                          DirectorCreateView
 #                         )       
 
-# urlpatterns = [
-#     path('homepage/', HomePageView.as_view(), name = 'homepage'),
-#     path('addfilm/', FilmCreateView.as_view(), name = 'addfilm'),
-#     path('adddirector/', DirectorCreateView.as_view(), name = 'adddirector'),
-# ]
+urlpatterns = [
+    # path('homepage/', HomePageView.as_view(), name = 'homepage'),
+    # path('addfilm/', FilmCreateView.as_view(), name = 'addfilm'),
+    # path('adddirector/', DirectorCreateView.as_view(), name = 'adddirector'),
+]

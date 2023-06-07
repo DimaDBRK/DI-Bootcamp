@@ -1,15 +1,16 @@
 <div id="navcontainer">
     <ul id="navlist">
-    <li id="active"><a href="#" id="current">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Portfolio</a></li>
-    {% if user.is_authenticated %}
+        
+        <li id="active"><a href="#" id="current">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+    {% comment %} {% if user.is_authenticated %}
     <li><a href="{% url 'logout' %}">Logout</a></li>
     {%else %}
     <li><a href="{% url 'login' %}">Login</a></li>
-    {% endif %}
+    {% endif %} {% endcomment %}
 
     </ul>
 </div>
