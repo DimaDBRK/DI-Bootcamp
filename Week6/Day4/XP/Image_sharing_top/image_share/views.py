@@ -31,15 +31,10 @@ class HomePageView(ListView):
     context_object_name = 'images'
     
 
-class AddPostView(CreateView): #we check if user is login, if no - ask login, redirect 
+class AddImageView(CreateView): #we check if user is login, if no - ask login, redirect 
     model = Image
     form_class = ImageForm
     template_name = 'image_share/upload_image.html'
-    success_url = reverse_lazy('homepage')
+    success_url = reverse_lazy('upload-image')
     login_url = reverse_lazy('login') #redirect to ligin page
-    # redirect_field_name = reverse_lazy('posts')
-    
-    # def get_initial(self): # sets the ininital values for the form of the view
-    #     user = self.request.user #get current user
-    #     user_profile = user.userprofile #the current user profile
-    #     return {'author' : user_profile}
+    redirect_field_name = reverse_lazy('homepage')

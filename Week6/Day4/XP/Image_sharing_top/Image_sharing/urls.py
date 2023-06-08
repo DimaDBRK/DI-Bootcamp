@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views
-from image_share.views import RegisterView, HomePageView, profile, AddPostView
+from image_share.views import RegisterView, HomePageView, profile, AddImageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,5 @@ urlpatterns = [
     path('register/', RegisterView.as_view(), name = 'register'),
     path('homepage/', HomePageView.as_view(), name = 'homepage'),
     path('profile/<int:id>/', profile, name = 'profile'),
-    path('upload-image', AddPostView.as_view(), name = 'upload'),
+    path('upload-image', AddImageView.as_view(), name = 'upload'),
 ]

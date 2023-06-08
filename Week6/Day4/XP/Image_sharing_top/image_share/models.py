@@ -8,7 +8,7 @@ class Image (models.Model):
     image = models.ImageField(upload_to ='')
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
-    author = models.ForeignKey('UserProfile', on_delete= models.CASCADE, related_name= 'images')
+    author = models.ForeignKey(User, on_delete= models.CASCADE, related_name= 'images')
     data_create = models.DateTimeField(auto_now_add=True)
 
 
