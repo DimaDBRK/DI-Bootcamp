@@ -35,6 +35,29 @@ class AddImageView(CreateView): #we check if user is login, if no - ask login, r
     model = Image
     form_class = ImageForm
     template_name = 'image_share/upload_image.html'
-    success_url = reverse_lazy('upload-image')
+    success_url = reverse_lazy('homepage')
     login_url = reverse_lazy('login') #redirect to ligin page
     redirect_field_name = reverse_lazy('homepage')
+    
+    def get_initial(self): # sets the ininital values for the form of the view
+        user = self.request.user #get current user
+        # user1 = UserProfile.objects.get(user = self.request.user)
+        # print(user1)
+        return {'author' : user }
+    
+    
+class MyImagesView(UserPassesTestMixin, ListView):
+    template_name = 'image_share/my_images.html'
+    context_object_name = 'images'
+    model = Image
+
+    def get_queryset(self):
+        return Image.objects.filter(author=self.request.user).all()
+
+    def get_context_data(self, **kwargs):
+        context = super(MyImagesView, self).get_context_data(**kwargs)
+        context['title'] = "My Images"
+        return context
+
+    def test_func(self):
+        return self.request.user.is_authenticated

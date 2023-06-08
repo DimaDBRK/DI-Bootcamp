@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views
-from image_share.views import RegisterView, HomePageView, profile, AddImageView
+from image_share.views import RegisterView, HomePageView, profile, AddImageView, MyImagesView
+
+from django.conf import settings  # new
+from django.urls import path, include  # new
+from django.conf.urls.static import static  # new
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +31,7 @@ urlpatterns = [
     path('homepage/', HomePageView.as_view(), name = 'homepage'),
     path('profile/<int:id>/', profile, name = 'profile'),
     path('upload-image', AddImageView.as_view(), name = 'upload'),
+    path('my-images/', MyImagesView.as_view(), name='my_images'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #new

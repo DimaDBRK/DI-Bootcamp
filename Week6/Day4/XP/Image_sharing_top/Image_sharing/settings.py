@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Image_sharing.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'images',
+        'NAME': 'images2',
         'USER': 'postgres',
         'PASSWORD': 'Kachkanar',
         'HOST': 'localhost',
@@ -134,3 +134,7 @@ LOGIN_REDIRECT_URL = 'homepage'
 LOGOUT_REDIRECT_URL = 'homepage'
 
 LOGIN_URL = 'login'
+
+MEDIA_ROOT = BASE_DIR/'media'
+
+MEDIA_URL = '/media/'

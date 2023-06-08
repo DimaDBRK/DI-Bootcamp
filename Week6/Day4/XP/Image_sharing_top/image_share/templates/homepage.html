@@ -4,7 +4,19 @@
 
 
     {% block content %}
+    {% if user.is_authenticated %}
+    {% for image in images %}
+    <div class="card">
+        <h3 class="card-header">{{image.title}}</h3>
+        <p class="card-text" >User: {{image.author}} </p>
+        <p class="card-text" >Qty image: {{author.userprofile.images_number}} </p>
+        <img  alt="{{image.description}}" src="{{image.image.url}}" width="200"/>    
+    </div>
     <br>
-    MAIN PAGE
-    
+    {% endfor %}
+        
+    {% else %}
+    <div class="alert alert-primary" role="alert">Please, login or register</div>
+    {% endif %}
+        
     {% endblock %}

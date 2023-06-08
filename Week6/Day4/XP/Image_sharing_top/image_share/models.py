@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Image (models.Model):
 # model - table
-    image = models.ImageField(upload_to ='')
+    image = models.ImageField(upload_to ='images/')
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
     author = models.ForeignKey(User, on_delete= models.CASCADE, related_name= 'images')

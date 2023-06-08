@@ -4,6 +4,8 @@
     </li>
 
     {% if user.is_authenticated %}
+    <li><a class="nav-link link-light" href="{% url 'upload' %}">UPLOAD IMAGE</a></li>
+    <li><a class="nav-link link-light" href="{% url 'my_images' %}">MY Images</a></li>
     <li><a class="nav-link link-light" href="{% url 'profile' user.id %}">PROFILE</a></li>
     <li><a class="nav-link link-light" href="{% url 'logout' %}">LOGOUT</a></li>
     
