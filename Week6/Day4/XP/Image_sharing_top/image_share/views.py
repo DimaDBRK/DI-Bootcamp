@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin #check for form base
 from django.contrib.auth.mixins import UserPassesTestMixin #check for form -> tets function
 from .models import UserProfile
+from django.shortcuts import get_object_or_404
+from typing import Any, Dict
 
 from .models import Image
 # Create your views here.
@@ -29,6 +31,15 @@ class HomePageView(ListView):
     model = Image
     template_name = 'homepage.html'
     context_object_name = 'images'
+    
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]: #for mofdify the context dictonary - we add new feature
+        context =  super().get_context_data(**kwargs) #getting the current context
+       
+        user_profile = UserProfile.objects.all()
+        context['userprofile'] = user_profile
+        
+        return context
+    
     
 
 class AddImageView(CreateView): #we check if user is login, if no - ask login, redirect 
@@ -61,3 +72,44 @@ class MyImagesView(UserPassesTestMixin, ListView):
 
     def test_func(self):
         return self.request.user.is_authenticated
+    
+
+class UserProfileView(DetailView):
+    template_name = 'image_share/profile_id.html'
+    context_object_name = 'profile'
+    model = UserProfile
+   
+    # def post(self,request, film_id): 
+        
+    #     film = get_object_or_404(Film, id=film_id)
+    #     user = self.request.user
+    #     user_profile = user.user_profile
+    #     print(user_profile)
+    
+    # def get_context_data(self, **kwargs):
+    #     # user = User.objects.get(id=self.kwargs['pk'])
+    # #   user = User.objects.get(id=self.kwargs['pk'])
+    #     profile = UserProfile.objects.all()
+    # #     print('1')
+    #     # context = super(UserProfileView, self).get_context_data(**kwargs)
+    # #     # context['title'] = f"{user.username}"
+    #     # context['profile'] =user
+    #     context = user
+    #     return context
+    
+
+class UserImagesView(ListView):
+    template_name = 'image_share/user_images.html'
+    context_object_name = 'images'
+    model = Image
+
+    def get_queryset(self, **kwargs):
+        user_id = User.objects.get(id=self.kwargs['pk'])
+        return Image.objects.filter(author= user_id).all()
+
+    # def get_context_data(self, **kwargs):
+    #     user = User.objects.get(id=self.kwargs['pk'])
+        
+    #     context = super(MyImagesView, self).get_context_data(**kwargs)
+    #     context['title'] = "My Images"
+    #     return context

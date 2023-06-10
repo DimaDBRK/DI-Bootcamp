@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    {% if messages %}
+         {% for message in messages %}
+             <div class="text-center alert alert-{{ message.tags }}">
+                 {{ message|safe }}
+             </div>
+         {% endfor %}
+     {% endif %}
+
+
+    <div class="container">
+        <h1>{{ profile.user.username }}</h1>
+        <p>Images count: {{ profile.images_number }}</p>
+        <a href="{% url 'user_images' profile.user.id %}">{{ profile.user.username }}'s album</a>
+    </div>
+{% endblock content %}

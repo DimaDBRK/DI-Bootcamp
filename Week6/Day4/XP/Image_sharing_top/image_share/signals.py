@@ -22,7 +22,7 @@ def create_user_profile(sender, instance, created, **kwargs):
 def increase_image_qty(sender, instance, created, **kwargs):
     if created:
         user_image = instance.author
-        item = UserProfile.objects.get(user =user_image)
+        item = UserProfile.objects.get(user = user_image)
         item.images_number += 1
         item.save()
         
