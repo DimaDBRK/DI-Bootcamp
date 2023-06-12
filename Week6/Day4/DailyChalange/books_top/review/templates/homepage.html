@@ -1,0 +1,34 @@
+    {% extends 'base.html' %}
+
+    {% block title %} HOMEPAGE {% endblock %}
+
+
+    {% block content %}
+    <br>
+        {% comment %} Check status: {{ user.is_superuser }} {% endcomment %}
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        
+        
+        {% if user.is_authenticated %}
+        <div >
+            {% for book in books %}
+            <div class="card">
+            
+                <h3 class="card-header">{{book.title}}</h3>
+                <p class="card-text">Description: {{book.description}}</p>
+                        
+            {% endfor %}
+        <br>
+        </div>
+        {% else %}
+        <div class="alert alert-primary" role="alert">Please, login or register</div>
+        {% endif %}
+   
+        {% endblock %}
