@@ -13,7 +13,7 @@ class Book(models.Model):
     page_count = models.IntegerField()
     categories = models.CharField(max_length=50)
     thumbnail_url = models.URLField(blank=True, null=True)
-    
+ 
     
 class BookReview(models.Model):
     book = models.ForeignKey('Book', on_delete=models.CASCADE, related_name= 'reviews' )

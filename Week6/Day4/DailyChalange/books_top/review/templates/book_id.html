@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block content%}
+
+<h1 style="margin-bottom: 35px">Details about {{ book.title }}</h1>
+
+<div class="d-flex flex-row" style="gap: 4rem">
+    <img class="align-self-center mr-3" src="{{book.thumbnail_url}}" alt="" style="width: 18rem;">
+    <div class="media-body">
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Published date: {{book.published_date}}</li>
+
+            <li class="list-group-item">Author: {{book.author}}</li>
+
+        </ul>
+
+        <p><b>Description: </b>{{book.description}}</p>
+
+        <p>Pages: {{book.page_count}}</p>
+
+        <p>Total reviews: {{ reviews.count }}</p>
+        <p>Av raiting: {{ avg_rating |floatformat:1  }}</p>
+
+        <hr>
+        <strong>Reviews:</strong>
+        <ul reversed>
+            {% for review in reviews reversed %}
+            <li>By {{ review.user }}: <br>{{ review.review }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="card-body">
+
+         
+           <a href="{% url 'add-review' book.id%}"><button type="submit" > Add Review</button></a>
+                
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

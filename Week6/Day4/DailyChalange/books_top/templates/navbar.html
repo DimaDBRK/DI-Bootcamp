@@ -6,7 +6,7 @@
     {% if user.is_authenticated %}
     
     <li class="nav-item">
-      <a class="nav-link link-light" href="#">ADD BOOK</a>
+      <a class="nav-link link-light" href="{% url 'add-book' %}">ADD BOOK</a>
     </li>
     <li><a class="nav-link link-light" href="#"> MANAGE BOOK</a></li>
     {% endif %}
