@@ -4,6 +4,12 @@
 
 
     {% block content %}
+
+    <form>
+        {{search}}
+        <button type ="submit">Submit</button>
+    </form>
+    
     <br>
         {% comment %} Check status: {{ user.is_superuser }} {% endcomment %}
         {% if messages %}

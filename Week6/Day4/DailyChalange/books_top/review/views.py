@@ -3,7 +3,7 @@ from typing import Any, Dict
 from django.shortcuts import render, redirect
 from datetime import date
 from .models import Book, BookReview
-from .forms import BookForm, BookReviewForm
+from .forms import BookForm, BookReviewForm, SearchForm
 from django.views.generic.edit import CreateView, DeleteView, FormMixin
 from django.views.generic import ListView, View, DetailView
 from django.urls import reverse_lazy 
@@ -26,11 +26,36 @@ from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.db.models import Avg
 
+from typing import Any, Dict
+from django.db.models.query import QuerySet
+
 # Create your views here.
 class HomePageView(ListView):
     model = Book
     template_name = 'homepage.html'
     context_object_name = 'books'
+    success_url = reverse_lazy('homepage')
+
+    def get_queryset(self) -> QuerySet[Any]: # modifying / filtering the object list queryset
+        
+        query = self.request.GET.get('query',None) #GET - we add to recive [] in any case
+        if query:
+            posts_all = Book.objects.filter(Q(title__icontains=query) | Q(author__icontains=query) )# to add filter | 
+            
+        else:
+            posts_all = Book.objects.all()
+                
+        return posts_all # return what will be used like post list
+    
+    
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]: #for mofdify the context dictonary - we add new feature
+        context =  super().get_context_data(**kwargs) #getting the current context
+       
+        search_form = SearchForm()
+        context['search'] = search_form
+        
+        return context 
+    
     
 
 class AddBookView(CreateView): #we check if user is login, if no - ask login, redirect 
@@ -86,5 +111,4 @@ class BookDetailView(DetailView):
         context['reviews'] = reviews
         context['avg_rating'] = reviews.aggregate(Avg('raiting'))['raiting__avg']
         return context
-    
     

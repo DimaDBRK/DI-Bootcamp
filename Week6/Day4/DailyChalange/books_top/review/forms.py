@@ -30,3 +30,6 @@ class BookReviewForm(forms.ModelForm):
             'user': forms.HiddenInput(),
             'book': forms.HiddenInput(),
             }
+
+class SearchForm(forms.Form):
+    query = forms.CharField(max_length = 20)
