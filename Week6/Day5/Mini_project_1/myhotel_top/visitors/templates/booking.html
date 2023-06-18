@@ -1,0 +1,87 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+
+    {% if messages %}
+         {% for message in messages %}
+             <div class="text-center alert alert-{{ message.tags }}">
+                 {{ message|safe }}
+             </div>
+         {% endfor %}
+    {% endif %}
+
+	<section class="search-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+
+					<div class="row mt-3 mb-3 justify-content-between">
+						<div class="filter-card">
+							<h5>Check rooms</h5>
+							<form action="" method="POST">
+								{% csrf_token %}
+								<div class="row form-group">
+									<div class="col-md-12">
+										Check in
+										<p>
+											{{ form.check_in }}
+										</p>
+									</div>
+									<div class="col-md-12">
+										Check out
+										<p>
+											{{ form.check_out }}
+										</p>
+									</div>
+									<div class="col-md-12">
+										QTY guests
+										<p>
+											{{ form.guests_num }}
+										</p>
+									</div>
+								</div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<input type="submit" class="btn btn-info btn-block" value="Search">
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+
+
+
+				<div class="col-lg-9  px-2">
+
+
+					{% for room in rooms %}
+						<div class="row search-card-result">
+							<div class="col-md-3">
+								<img class="img-fluid" src="{% static 'room.jpg' %}" alt="Hotel room image">
+							</div>
+							<div class="col-md-5">
+								<h5>{{ room.get_room_type_display }}-room</h5>
+								<p>Room number: {{ room.room_number }}</p>
+							</div>
+							<div class="col-md-2 border-left text-center more-offers">
+								<p>Price {{ room.price }} NIS/day</p>
+							</div>
+							<div class="col-md-2 border-left text-center more-offers">
+								<a href="{% url 'order' room.id %}">
+									<div class="btn btn-info">Book</div>
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+{% endblock content %}

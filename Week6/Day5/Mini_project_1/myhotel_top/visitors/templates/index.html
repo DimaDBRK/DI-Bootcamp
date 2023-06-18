@@ -1,0 +1,20 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+
+    {% if messages %}
+         {% for message in messages %}
+             <div class="text-center alert alert-{{ message.tags }}">
+                 {{ message|safe }}
+             </div>
+         {% endfor %}
+    {% endif %}
+
+    <div class="container">
+        <h1>Homepage</h1>
+        <div class="row">
+
+        </div>
+    </div>
+{% endblock content %}

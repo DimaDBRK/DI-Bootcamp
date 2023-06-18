@@ -1,0 +1,34 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+
+    <header >
+      <h1 >Good Hotel</h1>
+    </header>
+
+    <div class="container">
+      <div class="image-container">
+        <img src="{% static 'hotel.jpg' %}" class="info-image" alt="Hotel Image">
+      </div>
+
+      <p>Info about Hotel....</p>
+
+      <p>More info about ...</p>
+
+      <div class="image-container">
+        <img src="{% static 'pool.jpg' %}" class="info-image" alt="Pool Image">
+      </div>
+
+      <p>More...</p>
+
+      <p>Details...</p>
+
+      <p>Thnak you!</p>
+
+      <div>
+        <a class="booking-link" href="{% url 'booking' %}">Book Now</a>
+      </div>
+    </div>
+{% endblock content %}

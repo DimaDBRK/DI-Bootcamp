@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+
+    {% if messages %}
+         {% for message in messages %}
+             <div class="text-center alert alert-{{ message.tags }}">
+                 {{ message|safe }}
+             </div>
+         {% endfor %}
+    {% endif %}
+
+	<div class="container">
+      <form method="POST">
+         {% csrf_token %}
+         {{ form.as_div }}
+         <input type="submit" value="Submit">
+      </form>
+    </div>
+{% endblock content %}

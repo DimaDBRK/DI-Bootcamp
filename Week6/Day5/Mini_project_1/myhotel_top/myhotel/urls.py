@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('visitors/', include('visitors.urls')), #include urls from other application
     path('staff/', include('staff.urls')), #include urls from other application
-    path('accounts/', include('accounts.urls')) #include urls from other application
-    
+    path('accounts/', include('accounts.urls')), #include urls from other application
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
