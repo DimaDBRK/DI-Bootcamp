@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .toRed {
+            background-color: red;
+        }
+
+        :root {
+            --h1-tx-size: 20px;
+        }
+        
+        h1 {
+            font-size:  var(--h1-tx-size);
+        }
+        
+          /* Animation */ 
+        .animation { 
+            
+            /* Set opacity to 0 */  
+            opacity: 1;  
+            /* Add animation properties */
+            animation: fadeIn 2s ease-in; 
+           }
+        
+        @keyframes fadeIn {  
+            from {  
+                opacity:1  
+            }  
+         
+            to {  
+                opacity:0.2;  
+            }  
+         }
+
+    </style>    
+</head>
+<body>
+    
+    <article>
+        <h1> Some Facts </h1>
+        <h2 class = ""> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    </article>
+    <div> Test for animation</div>
+    <script src = "ex1_script.js"></script> 
+
+
+</body>
+</html>
