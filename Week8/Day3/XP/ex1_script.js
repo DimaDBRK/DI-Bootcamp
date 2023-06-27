@@ -111,6 +111,7 @@ console.log(studentsPass);
 
 const studentsPassText = students.filter((element) => element['isPassed']).map((element) => `Good Job ${element["name"]} you passed the course in ${element["course"]}`);
 console.log("Test 7.2");
+console.log(users);
 console.log(studentsPassText);
 
 
@@ -118,3 +119,8 @@ console.log(studentsPassText);
 // Bonus : Chain the filter method with a forEach method, to congratulate the students with their name 
 // and course name (ie. “Good job Jenner, you passed the course in Information Technology”, 
 // “Good Job Marco you passed the course in Robotics” ect…)
+
+const studentsPassText2 = [];
+students.filter((element) => element['isPassed']).forEach((element) => studentsPassText2.push(`Good Job ${element["name"]} you passed the course in ${element["course"]}`));
+console.log("Test Bonuse");
+console.log(studentsPassText2);
