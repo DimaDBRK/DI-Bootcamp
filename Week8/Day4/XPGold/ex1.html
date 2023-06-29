@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+  <style>  
+    body {
+        padding-top:0px;
+    } 
+
+ 
+    .grid-container-field {
+        display: grid;
+        grid-template-columns: repeat(60, 20px);
+        background-color: lightgray;
+        padding: 10px;
+        justify-content: left;
+
+    }
+
+    .grid-container-menu {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap:20px;
+        background-color: grey;
+        padding: 10px;
+
+    }
+
+    .mark {
+        box-shadow: 5px 10px;
+    }
+
+    .grid-item-color {
+       
+        border : 1px solid gray;
+        padding: 20px;
+        font-size: 1px;
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      } 
+
+    .grid-item-pixels {
+        background-color: white;
+        border: 1px solid rgb(163, 157, 157);
+        
+        font-size: 10px;
+        text-align: center;
+        height: 20px;
+        width: 20px;
+      }
+    #clear {
+        height: 40px;
+        grid-column: 1 / span 2;
+    }
+
+    #main{
+        display: grid;
+        grid-template-columns: 1fr 10fr; 
+    }
+</style> 
+ </head>
+ <body>
+    
+    <div id = "main">
+        <div id = "menu" class = "grid-container-menu">
+            <!-- <div class = "grid-item-color">color 1</div>
+            <div class = "grid-item-color">color 2</div>
+            <div class = "grid-item-color">color 3</div>
+            <div class = "grid-item-color">color 4</div>
+            <div class = "grid-item-color">color 5</div>
+            <div class = "grid-item-color">color 6</div>
+            <div class = "grid-item-color">color 7</div>
+            <div class = "grid-item-color">color 8</div>
+            <div class = "grid-item-color">color 9</div>
+            <button id = 'clear'>clear</button> -->
+            <button id = "clear">Clear</button>
+        </div>
+        <div id = "main-field" class = "grid-container-field ">
+            
+        </div>
+    </div>
+
+
+    
+   
+ 
+    
+    <script src = "ex1_script.js"></script> 
+
+
+</body>
+</html>
