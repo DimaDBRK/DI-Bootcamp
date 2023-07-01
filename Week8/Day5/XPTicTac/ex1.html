@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>TicTac</title>
+  <style>  
+    @import url('https://fonts.cdnfonts.com/css/sega-logo-font');
+    * {
+        box-sizing:border-box;
+        margin: 0;
+    }
+    
+    *:focus {
+        outline: none;
+    }
+    
+    body {
+        padding-top:0px;
+        background: rgb(224, 229, 222);
+    } 
+
+   
+    nav {
+        display: flex;
+        gap: 30px;
+        padding-left: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content:center;
+        height: 87px;
+        
+        
+        background-color: #c7dbc3;
+       
+    }
+
+    #robotitle, #xpaly {
+        font-family: 'SEGA LOGO FONT', sans-serif;
+        font-size: 30px;;
+    }
+
+    #whowin {
+        font-family: 'SEGA LOGO FONT', sans-serif;
+        color:rgb(0, 0, 0);
+        font-size: 25px;;
+        height: 100px;
+        text-align: center;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+        
+
+    #main {
+        padding: 10px 10rem;
+        background-image: url("images/circuit-pattern.png");
+        background: rgb(224, 229, 222);
+    }
+
+    #container {
+        display: grid;
+        grid-template-columns: repeat(3, 100px   );
+        justify-content: center;
+        gap: 20px;
+        
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        font-family: 'SEGA LOGO FONT', sans-serif;
+        font-size: 60px;
+        background-color: rgb(182, 145, 237);
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: auto;
+    }
+
+
+    button {
+        font-family: 'SEGA LOGO FONT', sans-serif;
+    }
+    #level {
+        background-color: gray;
+    }
+
+</style> 
+ </head>
+ <body>
+    <nav>
+        <p id = "robotitle">Tic Tac</p>
+        <button id = 'level'>Super Power</button>
+        
+        <button id = 'clear'>Clear</button>
+        <button id = 'iplay'>First move</button>
+        <div id = "xpaly">user</div>
+        
+    </nav>
+
+    <div id = "whowin"></div>
+    <div id = "main">
+        <div id = "container">
+           <div id = "0" class = "cell"></div>
+           <div id = "1" class = "cell"></div>
+           <div id = "2" class = "cell"></div>
+           <div id = "3" class = "cell"></div>
+           <div id = "4" class = "cell"></div>
+           <div id = "5" class = "cell"></div>
+           <div id = "6" class = "cell"></div>
+           <div id = "7" class = "cell"></div>
+           <div id = "8" class = "cell"></div>
+
+        </div>
+    </div>
+      
+
+    
+   
+ 
+    
+    <script src = "ex1_script.js"></script> 
+
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+  <style>  
+    @import url('https://fonts.cdnfonts.com/css/sega-logo-font');
+    * {
+        box-sizing:border-box;
+        margin: 0;
+    }
+    
+    *:focus {
+        outline: none;
+    }
+    
+    body {
+        padding-top:0px;
+        background: rgb(224, 229, 222);
+    } 
+
+   
+
+ 
+    nav {
+        display: flex;
+        gap: 30px;
+        padding-left: 30px;
+        flex-wrap: wrap;
+        justify-content: left;
+        align-content:center;
+        height: 87px;
+        
+        
+        background-color: #c7dbc3;
+       
+    }
+
+    #robotitle {
+        font-family: 'SEGA LOGO FONT', sans-serif;
+        font-size: 30px;;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        
+  
+    }
+    input {
+        display: inline;
+        border: 1px solid rgb(203, 194, 194);
+        background-color: rgb(195, 190, 190);
+        color:antiquewhite;
+        border-radius: 5px;
+        padding:10px;
+        height: 40px;
+        width: 500px;
+        
+        
+    }
+
+    input:active {
+        background-color: rgb(192, 175, 241);
+    }
+    input::-webkit-search-cancel-button{
+        position:relative;
+        right:1px;  
+    
+        -webkit-appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius:10px;
+        background: rgb(115, 74, 237);
+    }
+
+ 
+    
+
+    #main {
+        padding: 10px 10rem;
+        background-image: url("images/circuit-pattern.png");
+        background: rgb(224, 229, 222);
+    }
+
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:center;
+
+        gap:20px;
+        padding: 20px;
+        
+        width: 300px;
+        height: 350px;
+        border-radius: 10px;
+        background-color: rgb(182, 145, 237);
+    }
+
+    .avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgb(107, 17, 241);
+       
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    p.name {
+     
+        font-size: 30px;
+        align-self: flex-start;
+        
+    }
+
+    p.email {
+        font-size: 20px;
+        align-self: flex-start;
+     
+    }
+    
+    img {
+       
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid rgb(107, 17, 241);
+     
+        
+    }
+ 
+    
+</style> 
+ </head>
+ <body>
+    <nav>
+        <p id = "robotitle">ROBOFRIENDS</p>
+        <form>
+            <input type="search">
+        </form>
+    </nav>
+
+      
+    <div id = "main">
+        <div id = "container">
+           
+
+        </div>
+    </div>
+      
+
+    
+   
+ 
+    
+    <script src = "ex1_script.js"></script> 
+
+
+</body>
+</html>
