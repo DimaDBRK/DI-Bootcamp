@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        border: 1px dotted grey;
+        padding: 10px;
+    }
+
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #clear {
+        background-color: brown;
+    }
+
+    .gifBox {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+<body>
+    <form id="textinput">
+        <label for="noun">Input word for search:</label><br>
+        <input type="text" id="noun">
+        <button type = "submit" id="btn">Get gif</button>
+    </form>
+    
+    <div id ="results">
+        <span>Search for:</span>
+        <p id = "word"></p>
+        <button type = "btn" id="clear">Clear</button>
+        
+    </div>
+
+    <div id ="container">
+       
+    </div>
+
+    <template id="template">
+        <div class = "gifBox">
+            <h2>Tets word</h2>
+            <img src = "" alt = "">
+            <button>Delete</button>
+        </div>
+    </template>
+
+    <script src = "scripts.js"></script>
+</body>
+</html>
