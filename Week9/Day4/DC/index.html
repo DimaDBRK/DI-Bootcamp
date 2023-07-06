@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+</head>
+<style>
+    div {
+        border: 1px dotted grey;
+        padding: 5px;
+    }
+
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 500px;
+        width: 500px;
+        background-color: lightblue;
+        border-radius: 50px;
+        
+    }
+    
+    label {
+        text-align: center;
+    }
+
+    #from, #to {
+        width: 300px;
+    }
+    
+    #amount {
+        width: 200px;
+    }
+
+    #textinput {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #btn {
+      
+        color: #5a5656;
+        cursor: pointer;
+        font-weight: bold;
+        height: 30px;
+        padding-bottom: 2px;
+        width: 80px;
+    }
+    #info-box {
+        display: flex;
+        flex-direction: row;
+               
+       
+    }
+
+    #result {
+        height: 15px;
+        width: 150px;
+        background-color: aliceblue;
+        border: 1px solid grey;
+        text-align: center;
+        
+    }
+
+    .center {
+        margin-top: 5rem;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+    }
+
+    #switch-element {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid grey;
+        align-self: flex-end;
+        background-image: url(images/switch.png);
+        background-size: contain;
+    }
+
+    #switch-element:active{
+        background-color:rgb(241, 241, 127);
+        box-shadow:  0 0 10px #f0300e;
+        color: rgb(241, 241, 127);
+        
+    }
+
+
+</style>
+<body>
+    <div id ="container" class = "center">
+        <div id ="info-box">
+            <p id = "info">Welcome!</p>
+        </div>
+
+        <form id="textinput">
+            <label for="from">From:</label><br>
+            <select name="currency-from" id="from">
+                <option id = "temp-from" value="CUR">Chose one</option>
+            </select><br>
+
+            <div id = "switch-element"></div>
+            <label for="to">To:</label><br>
+            <select name="currency-to" id="to">
+                <option id = "temp-to" value="CUR">Chose one</option>
+            </select><br>
+            
+            <label for="amount">Amount:</label><br>
+            <input type="text" id="amount"><br>
+            <button type = "submit" id="btn">Convert</button>
+            
+            
+        </form>
+    
+        <div id ="results-box">
+            <p id = "result"></p>
+        </div>
+    </div>
+
+    
+    <script src = "scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+:root {
+    --sky-color: rgb(0, 0, 0);
+    --shadow-size: 0 0 20px #f6f7d2;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var( --sky-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+div {
+    /* border: 1px dotted rgb(232, 230, 230); */
+    padding: 10px;
+    
+}
+
+.center {
+    margin-top: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+#container {
+        
+    width: 580px;
+    height: 800px;
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Press Start 2P', cursive;
+   
+    z-index: 1;
+    
+}
+
+.shadow {
+    -moz-box-shadow: var(--shadow-size); 
+    -webkit-box-shadow:var(--shadow-size); 
+     box-shadow:var(--shadow-size);
+}
+
+#logo {
+    border-radius: 50%;
+    
+}
+
+
+
+#info-box {
+    border: 3px solid rgb(252, 252, 0);
+    border-radius: 30px;
+    padding: 10px;
+    width: 760px;
+    height: 300px; 
+    color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  
+}
+#big-logo{
+    width: 360px;
+    height: 200px; 
+    background-image: url(images/SWlogo.png);
+   
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    border-radius: 30px;
+    border: 1px solid var(--sky-color);
+    padding: 0;
+    margin-bottom: 10px;
+    
+}
+
+.hideme {
+    display: none;
+}
+
+.text {
+    font-size: 1.5rem;
+    background-color: var( --sky-color);
+}
+
+.name-p {
+    font-size: 3rem;
+    text-align: center;
+    background-color: var( --sky-color);
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    border: 3px solid rgb(252, 252, 0);
+    background-color: var( --sky-color);
+    border-radius: 5px; 
+    color: rgb(252, 252, 0);
+    font-weight: bold;
+   
+
+}
+
+button:active{
+    background-color:rgb(255, 255, 3);
+    box-shadow:var(--shadow-size);
+    color: var( --sky-color);
+    
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+
+.stars, .twinkling {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(images/twinkling.png) repeat top center;
+  z-index:0;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+

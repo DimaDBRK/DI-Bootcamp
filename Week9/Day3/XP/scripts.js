@@ -119,7 +119,7 @@ async function makeRequest3 () {
 
 makeRequest3()
 
-
+// https://api.giphy.com/v1/gifs/search?q=sun&rating=g&limit=10&offset=2&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My
 // 🌟 Exercise 4: Analyze
 // Instructions
 // Analyse the code provided below - what will be the outcome?
