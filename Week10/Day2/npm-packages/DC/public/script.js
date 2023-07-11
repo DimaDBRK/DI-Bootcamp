@@ -100,12 +100,15 @@ async function sendDataToApi(url, data) {
     body: JSON.stringify(data),
     });
 
-    console.log(response);
+    console.log("response from server:", response);
     if (response.ok) {
       console.log('Data sended OK!');
-      render(["Data sended OK!", response.Response]);
+      const responseData = await response.text();
+      const info = responseData;
+      console.log("Info from response: ", responseData);
+      render(["Data sended OK!", responseData]);
     } else {
-      throw new Error ('Failed to send: ', response.json().status);
+      throw new Error ('Failed to send: ', );
     }
   } catch (err) {
     console.log("IN THE CATCH: ", err.message);

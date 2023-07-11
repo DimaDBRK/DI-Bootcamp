@@ -60,6 +60,12 @@ app.post('/formData', (req,res) => {
     // need library or package to extract data from body - body-parser. In 18 version it is in express
     console.log(req.body.message);
     console.log(req.body.email);
-    res.end(`You recive message "${req.body.message}" from : ${req.body.email}`); // send - will string by auto. We can use res.json if know type of data
+    res.send(`You recive message "${req.body.message}" from : ${req.body.email}`); // send - will string by auto. We can use res.json if know type of data
     
+})
+
+
+//add GET
+app.get('/formData', (req,res) => {
+   res.send("test formData"); 
 })
