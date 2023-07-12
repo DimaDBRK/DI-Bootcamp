@@ -8,6 +8,7 @@
 // When you start reading the file, you start at the position 0
 // If the file begins like this ">>>" after 3 steps you would be in position 3
 // If the file begins like this ">>><<" after 5 steps you would be in position 1
+
 const { error } = require('console');
 let fs = require('fs');
 
