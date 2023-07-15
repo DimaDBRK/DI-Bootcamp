@@ -1,5 +1,5 @@
 import  {db} from  '../config/db.js';
-
+import fs from "fs";
 /*
 register
 

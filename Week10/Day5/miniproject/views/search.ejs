@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+        <%- include('partials/head') %>
+</head>
+    
+<body>
+    <%- include('partials/header') %>
+    <h1>Search</h1>
+    <div id = "box">
+        <div id ="search-box">
+            <div id = "search-box-title">
+                <label for="title-input">Search Title</label>
+                <input placeholder="t" id="title-input"/>
+                <button onClick = "searchTitle()"  id = "btn-title" >Search</button>
+            </div>
+            <div id = "search-box-category">
+                <label for="category-input">Search Category</label>
+                <input placeholder="c" id="category-input"/>
+                <button onClick = "searchCategory()"   id = "btn-category" >Search</button>
+            </div>
+            <div id = "info-box">
+
+            </div>
+        </div>
+        <div id = "results">
+            <%- include('partials/posts') %>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+    <script src="search.js"></script>
+</body>
+</html>

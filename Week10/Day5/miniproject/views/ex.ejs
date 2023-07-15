@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <!-- to avoid error - add locals, it will not show error if no data received -->
+    Hi <%= locals.user.firstName %> <%= locals.user.lastName%>
+    <!-- if statement -->
+    <% if(login)  { %>
+        Welcome
+
+    <% } else  { %>
+        No login
+    <% } %>
+    <!-- loop  -->
+    <p> Welcome: </p>
+    <% for(const key in students)  { %>
+       <h4> <%= key %> - <%= students[key] %> </h4>
+    <% }  %>
+        <!-- loop  -->
+    <p> Info: </p>
+    <% arr.forEach(element => { %>
+       <h4> <%= element.name %> </h4>
+    <% }) %>
+
+    <% 
+        let html = ''
+        for (const item in students) {
+            html += '<h2>' + students[item] + '</h2>'
+        }
+     %>
+     <%- html %>
+</body>
+</html>

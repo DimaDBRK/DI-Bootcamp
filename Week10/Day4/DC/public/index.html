@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC store to file</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    div {
+        border: 1px solid lightblue;
+    }
+
+    button {
+        height: 30px;
+        width: 100px;
+    }
+
+    #main-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    #conatiner1, #conatiner2, #form-box1, #form-box2 {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #conatiner1, #conatiner2 {
+        height: 600px;
+        width: 400px;
+    }
+    
+    #info-box1, info-box2 {
+        width: 300px;
+        
+    }
+</style>
+<body>
+    <h1>DC</h1>
+    <div id = "main-box">
+        <div id = "conatiner1">
+            <h4>Login</h4>
+            <div id = "form-box1">
+                <label for="username-login-input">Username</label>
+                <input placeholder="username" id="username-login-input"/>
+                <label for="password-login-input">Password</label>
+                <input placeholder="password" id="password-login-input"/>
+                <button onClick = "login()"  disabled= "true" id = "btn-login" >Login</button>
+            </div> 
+            <h4>Information</h4>
+            <div id = "info-box1">
+
+            </div>
+        </div>
+
+        <div id = "conatiner2">
+            <h4>Register</h4>
+            <div id = "form-box2">
+                <label for="firstname-register-input">First Name</label>
+                <input placeholder="firstname" id="firstname-register-input"/>
+                <label for="lastname-register-input">Last Name</label>
+                <input placeholder="lastname" id="lastname-register-input"/>
+                <label for="email-register-input">Email</label>
+                <input placeholder="email" id="email-register-input"/>
+                <label for="username-register-input">Username</label>
+                <input placeholder="username" id="username-register-input"/>
+                <label for="password-register-input">Password</label>
+                <input placeholder="password" id="password-register-input"/>
+                <button onClick = "register()" disabled = "true" id = "btn-register">Register</button>
+            </div> 
+            <h4>Information</h4>
+            <div id = "info-box2">
+
+            </div>
+        </div>
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
