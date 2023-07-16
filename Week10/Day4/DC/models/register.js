@@ -1,5 +1,6 @@
 import  {db} from  '../config/db.js';
 import fs from "fs";
+import * as p4ssw0rd from 'p4ssw0rd';
 /*
 register.json
 
@@ -29,14 +30,6 @@ user_id, first_name, last_name, email, username, password, created_date, last_lo
 )
 */
 
-
-//all info
-export const getAllUsers = () => {
-    console.log('Received get req for all users');
-    return db('register')
-        .select('user_id', 'first_name', 'last_name', 'email', 'username', 'password','created_date', 'last_login')
-        .orderBy('user_id')
-}
 
 //Create ADD NEW => recive data 
 export const insertUser = async (dataFromUser) => {
@@ -116,21 +109,56 @@ export const insertUser = async (dataFromUser) => {
 
         } catch (error) {
                 console.error('Error writing to file:', error.message);
-                throw new Error('Failed to save data.');
+                throw new Error(error.message);
         }  
     
       
 }
 
  //search username
- export const checkLogin = (username, password) => {
+ export const checkLogin = async (username, password) => {
     console.log("Models recive object to search: ", username, "and pasww", password)
-    return db('register')
-    .select('user_id', 'username', 'password')
-    .where({username: username}) // sql req = ilike + % %, check knex documentation => whereIlike
-    // console.log("result from DB:", result)
-    // return result
+    //read data from register file
+    let users;
+    let login = false;
+    try {
+        //read file
+        //check if file exist
+    
+        const data = fs.readFileSync('../dc/data/register.json', 'utf-8');
+        users = JSON.parse(data);
+        console.log("read from file users OK:");
+        
+ 
+        // data analyses 
+
+        const userInfoIndex = users.findIndex(item => item.username === username)
+        //check username and email
+        if (userInfoIndex > 0) {
+            const dbHashPassword = users[userInfoIndex]["password"]
+            console.log("passw:", dbHashPassword);
+            // check password
+            if (p4ssw0rd.check(password, dbHashPassword)) {
+                login = true;
+                insertLogin(username, dbHashPassword);
+            } else {
+                console.log("Password no Ok");
+                throw  new Error("Password no Ok"); 
+            }
+
+        } else {
+            console.log("User name is registered.");
+            throw  new Error("User name doesn't."); 
+        };
+
+    } catch (error) {
+        console.error('Error writing to file:', error.message);
+        throw new Error(error.message);
+    } 
+
+    return login
  }
+
 // update user login date
 export const updateLastLogin = (user_id) => {
     let date_time = new Date();
@@ -152,18 +180,30 @@ create table login (
 )
 */
 
-export const getAllLogins = () => {
-    console.log('Received get req for all users');
-    return db('login')
-        .select('login_id', 'username', 'password')
-        .orderBy('login_id')
-}
 
 //Create ADD NEW Login => recive data = username
-export const insertLogin = ({username, password}) => {
+export const insertLogin = async (username, password) => {
     console.log("Models info login to insert:", {username, password})
-    return db('login')
-    .insert({username, password})
-    .returning(['login_id', 'username', 'password'])
+    let logins = [];
+    let date_time = new Date();
+    try { 
+        const data = fs.readFileSync('../dc/data/login.json', 'utf-8');
+        logins = JSON.parse(data);
+        console.log("read from file users OK:", logins);
+        // add info
+        logins.push({username, password, date_time})
+        //write to file
+        
+        fs.writeFileSync('../dc/data/login.json', JSON.stringify(logins), 'utf-8', (err) => {
+            console.log("write to file");
+            if (err) return console.log(err);
+            return console.log("write to file login:", username, date_time);
+            });
+
+    } catch (error) {
+        console.error('Error writing to file:', error.message);
+        throw new Error(error.message);
+    } 
+
    
  }
