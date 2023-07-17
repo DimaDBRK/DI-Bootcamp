@@ -1,0 +1,15 @@
+<div class = "feed-container">
+    <% if (locals.items)  { %>
+    <% for(const item of items)  { %>
+        <div class = "feed-box">
+            <h4> <%= item.title %> </h4>
+            <a href=<%= item.link %>>Link</a>
+            <p> <%= item.pubDate %> </p>
+            <p> <%= item.creator %> </p>
+            <p> <%= item.categories %> </p>
+            <p> <%= item.contentSnippet.slice(0,150) + '...' %> </p>
+        </div>
+
+     <% }  %>
+     <% }  %>
+</div>
