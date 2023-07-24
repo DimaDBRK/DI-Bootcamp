@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS file -->
+    <link rel="stylesheet" href="main.css">
+    <!-- Google fonts -->
+
+    <title>Portfolio</title>
+    <!-- add icon link -->
+    <link rel = "icon" href = "images/DDLogo.png" type = "image/x-icon">
+  </head>
+  <body>
+    <nav id= "top" class = "navbar">
+        <ul class = "nav-links">
+            <!-- Menu checkbox feature-->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">
+                &#9776;
+            </label>
+            
+            <!-- Nav menu list -->
+       
+            <div class="menu">
+                <li id = "name-logo"><a href="#home-box">Dmitry Dubrov</a></li>
+                <li><a href="#about-box">About</a></li>
+                <li><a href="#projects-box">Projects</a></li>
+                <li><a href="#contacts-box">Contacts</a></li>
+            </div>
+          </ul>
+        </nav>
+
+    <!-- hamburger menu with css -->
+   
+    <!-- end hamburger menu -->
+    <!-- Home -->
+    <section id = "home-box" class="home">
+        <img id = "avatar-img" src="images/DDsmall.jpg" alt="Dmitry Dubrov Photo">
+        <h1>I'm Dmitry Dubrov</h1>
+   
+        <div id = "hi-home-box">
+            
+            <p id = "home-text">
+            <span class = "text-span">Full Stack Developer experienced in Python and JavaScript based programming with background in Telecommunication and Mobile Devices. </span>
+            </p>
+            
+        </div>
+     
+        <a href="#projects-box" class = "btn btn-blue">Projects</a>
+        
+        <!-- CSS animation home -->
+        <div class="loader">
+            <span class="loader__element"></span>
+            <span class="loader__element"></span>
+            <span class="loader__element"></span>
+        </div>
+        <!-- end css animation -->
+    </section>
+
+    <!-- About -->
+    <section id = "about-box" class="about">
+        <div id = "about-header">
+            <h2>About me</h2>
+            <div class="line line-violet"></div>
+            <p>
+                Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
+            </p>
+        </div >
+        <div id="about-content-box">
+            <div id = "know-me">
+                <h3>Get to know me!</h3>
+                <div></div>
+                <div id ="know-me-text-box">
+                    <p>
+                        Well-balanced combination of “team playing” and personal responsibility. Strong problem-solving capabilities. I am actively seeking software engineering positions that provide opportunities for professional growth and allow me to make a meaningful impact on business.
+                    </p>
+                    <p>
+                        I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
+                    </p>
+                    <!-- <a href="#contacts-box" class = "btn btn-violet">Contacts</a> -->
+                </div>
+                
+                
+            </div>
+            <div id ="skills"> 
+                <h3>My Skills</h3>
+                <div id = "skills-box">
+                    <div class = "skill">Python</div>
+                    <div class = "skill">JavaScript</div>
+                    <div class = "skill">Django</div>
+                    <div class = "skill">React</div>
+                    <div class = "skill">Node.js</div>
+                    <div class = "skill">HTML</div>
+                    <div class = "skill">CSS</div>
+                    <div class = "skill">Databases</div>
+                    <div class = "skill">SQL</div>
+                    <div class = "skill">Testing (QA)</div>
+                    <div class = "skill">Git</div>
+                    <div class = "skill">Github</div>
+                    <div class = "skill">Analytical skills</div>
+                    <div class = "skill">Problem-solving</div>
+                    <a href="#work-box" class = "btn btn-violet">Background</a>
+                </div>
+               
+            </div>
+            
+        </div>
+    </section>
+    <!-- end About -->
+
+    <!-- Projects -->
+    <section id = "projects-box" class="projects">
+        <div id = "about-header">
+            <h2>Projects</h2>
+            <div class="line line-yellow"></div>
+            <p>
+                Here I would like to share some of the personal projects I have created with you
+            </p>
+        </div >
+        <!-- Project 1 -->
+        <div id="about-content-box">
+            <div id ="project-img-box"> 
+                <img class ="project-img" src="images/Project_weather.jpg" alt="Project1">
+            </div>
+
+            <div id = "know-me">
+                <h3>Python Weather App</h3>
+                <div></div>
+                <div id ="know-me-text-box">
+                    <p>
+                        Brings together various functionalities to deliver a rich user experience.
+                    </p>
+                    <p>
+                        Weather Widget designed for your city, featuring user login functionality, profile updates, and real-time SMS notifications.
+                    </p>
+                    <p>
+                        User-friendly interface with Tkinter (UI), OpenWeatherMap API, Database for user registration, SMS informing
+                    </p>
+                    <p>
+                        The project was completed in collaboration with @Marina Rachlin.
+                    </p>
+                   
+                   
+                    
+                </div>
+              
+             
+            </div>
+          
+        </div>
+        <!-- some css background between projects -->
+        <div class = "doted">
+            <a target="_blank" href="https://github.com/DimaDBRK/DI_Hackathon_1" class = "btn btn-yellow">Github</a>
+            <a target="_blank" href="https://youtu.be/lnbHqoabacM" class = "btn btn-yellow">Video</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div id="about-content-box">
+            <div id ="project-img-box"> 
+                <img class ="project-img" src="images/p2_2.jpg" alt="Project1">
+            </div>
+
+            <div id = "know-me">
+                <h3>JavaScript Words App</h3>
+                <div></div>
+                <div id ="know-me-text-box">
+                    <p>
+                        Allows users to add new words to a database and play games involving those words. New word - auto definition  via external API - dictionaryapi.dev
+                    </p>
+                    <p>Games:</p>
+                        
+                            <p > - Creating words from given Mix letters (Fisher-Yates algorithm) based on descriptions</p>
+                            <p > - Uncover words in text shrouded by censorship</p>                        
+                       
+                                
+                    </p>
+                    <p>
+                        Frontend: JavaScript, HTML, CSS.
+
+                    </p>
+                    <p>
+                        Backend: Django Rest API, Database (PostgreSQL).
+                    </p>
+              
+                </div>
+              
+             
+            </div>
+          
+        </div>
+        <!-- some css background between projects -->
+        <div class = "doted">
+            <a target="_blank" href="https://github.com/DimaDBRK/DI_Hackathon2" class = "btn btn-yellow">Github</a>
+            <a target="_blank" href="https://youtu.be/Nj1PsEW8ZSY" class = "btn btn-yellow">Video</a>
+        </div>
+        
+
+
+    </section>
+  
+    <!-- end Projects -->
+
+    <!-- Work  -->
+    <section id = "work-box" class="about">
+        <div id = "about-header">
+            <h2>Background</h2>
+            <div class="line line-violet"></div>
+            <p>
+                Here you will find more information about my work experience and education
+            </p>
+        </div >
+        <div id="about-content-box">
+            <div id = "know-me">
+                <h3>Work</h3>
+                <div></div>
+                <div id ="know-me-text-box">
+                    <p>
+                        Experienced in driving technical and business growth in mobile telcommunications and devices, with a successful track record of establishing strong relationships with major mobile device vendors (Samsung, Xiaomi, Apple, and others). Proven ability to increase product share and drive sales. Skilled in conducting mobile tests for quality assurance, developing data-driven business cases, and performing market analysis. Additionally, adept at providing technical support to B2B clients.
+                    <p>
+                        
+                    </p>
+                    
+                </div>
+                
+                
+            </div>
+            <div id ="skills"> 
+                <h3>Education</h3>
+                <div id = "skills-box">
+                    <h4>
+                    Developers Institute, TLV Coding Bootcamp 
+                    </h4>
+                    <p>
+                    Full Stack Web Development, Python and JavaScript program in Tel Aviv, Israel
+                    </p>
+                    <h4>
+                        Technical University of Telecommunications and Informatics, Moscow, Russia
+                    </h4>
+                    <p>
+                        Bachelor in Digital Mobile Telecommunication Systems 
+                    </p>
+                    <p>
+                        Bachelor in Economics & Management 
+                    </p>
+                   
+                </div>
+                
+            </div>
+        </div>
+        <a href="#top" class = "btn btn-violet">Menu</a>
+    </section>
+    <!-- end Work -->
+
+    <!-- Contacts -->
+    <section id = "contacts-box" class="home">
+         <!-- CSS animation home -->
+        <div class="loader">
+            <span class="loader__element"></span>
+            <span class="loader__element"></span>
+            <span class="loader__element"></span>
+        </div>
+        <!-- end css animation -->
+        <h2>Contacts</h2>
+        
+       
+        <div id = "contact-content-box">
+            <div id = "img-box">
+                <img id = "contacts-img" src="images/DD.jpg" alt="Dmitry Dubrov">
+            </div>
+            <div id = "contacts-text-box">
+                <p>
+                    Please feel free to contact me at your convenience. I would be more than happy to discuss any further details or answer any questions you may have.
+                </p>
+                <a target="_blank" href="https://www.linkedin.com/in/dubrov/" class = "btn btn-blue small">in</a>
+                <a href="mailto:dmitry.i.dubrov@gmail.com" class = "btn btn-blue small">@</a>
+                <a target="_blank" href="https://github.com/DimaDBRK" class = ""><img id = "gh-logo" src="images/github-bleu.png" alt="GH"></a>
+                
+               
+       
+            </div>
+        </div>
+        
+        
+      
+    </section>
+    <!-- end Contacts -->
+    <footer>
+        <img id = "logo-img" src="images/Logo2.jpg" alt="Dmitry Dubrov logo">
+       <p>2023</p>
+    </footer>
+
+    
+  </body>
+</html>
