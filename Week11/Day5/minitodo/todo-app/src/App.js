@@ -2,6 +2,7 @@
 import './App.css';
 import Cards from './components/Cards';
 import CardsDB from './components/CardsDB';
+import SuperHeroes from './components/SuperHeroes';
 
 import { Routes, Route, Link } from "react-router-dom";
 
@@ -21,11 +22,13 @@ function App() {
       <nav>
         <Link to="/">TODO on object</Link>{" /\\ "}
         <Link to="/db">TODO with DB</Link>{" /\\ "}
+        <Link to="/super">SuperHeroes</Link>{" /\\ "}
       
       </nav>
       <Routes>
         <Route path='/' element={<Cards/>}/>
         <Route path='/db' element={<CardsDB/>}/>
+        <Route path='/super' element={<SuperHeroes/>}/>
       </Routes >
         
       
